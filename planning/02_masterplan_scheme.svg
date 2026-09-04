@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="700" viewBox="0 0 960 700" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="slope" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe8c6"/>
+      <stop offset="1" stop-color="#eaf5e3"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1f6b3a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+  <text x="30" y="42" font-size="24" font-weight="bold" fill="#123d2b">Green.Lev.Travel — схема зонування ділянки «Варуш»</text>
+  <text x="30" y="66" font-size="14" fill="#5a6b60">Сценарій A: 2×Compact + Comfort + VIP · об'єднаний масив 0.44 га · СХЕМА, НЕ В МАСШТАБІ</text>
+
+  <!-- Plot outline (combined parcels) -->
+  <polygon points="150,150 780,120 830,560 210,610" fill="url(#slope)" stroke="#8bbf7a" stroke-width="2"/>
+  <!-- parcel divider -->
+  <line x1="500" y1="132" x2="540" y2="585" stroke="#9ac088" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="300" y="330" font-size="12" fill="#6f8a72" opacity="0.8">:0002 · 0.19 га</text>
+  <text x="640" y="330" font-size="12" fill="#6f8a72" opacity="0.8">:0001 · 0.25 га</text>
+
+  <!-- Railway (upper-left edge) + buffer -->
+  <line x1="120" y1="175" x2="770" y2="140" stroke="#7a7a7a" stroke-width="7"/>
+  <line x1="120" y1="175" x2="770" y2="140" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <text x="150" y="130" font-size="13" fill="#555" font-weight="bold">🚆 залізниця</text>
+  <rect x="160" y="150" width="600" height="34" fill="#3f7d3a" opacity="0.18"/>
+  <text x="360" y="172" font-size="12" fill="#2f5e2a">буферна зелена смуга (шумо-екран)</text>
+
+  <!-- Power line (ЛЕП) corridor -->
+  <line x1="760" y1="150" x2="560" y2="580" stroke="#c78a2a" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="700" y="250" font-size="12" fill="#a86f1c" transform="rotate(65 700 250)">коридор ЛЕП (без забудови)</text>
+
+  <!-- Contour hints (slope) -->
+  <path d="M180,250 Q480,230 800,250" fill="none" stroke="#a9cfa0" stroke-width="1" opacity="0.7"/>
+  <path d="M190,360 Q490,340 810,360" fill="none" stroke="#a9cfa0" stroke-width="1" opacity="0.7"/>
+  <path d="M200,470 Q500,450 820,470" fill="none" stroke="#a9cfa0" stroke-width="1" opacity="0.7"/>
+
+  <!-- Entry / parking / tech node (bottom, by road) -->
+  <line x1="120" y1="640" x2="700" y2="600" stroke="#b8a07a" stroke-width="10" stroke-linecap="round"/>
+  <text x="120" y="675" font-size="13" fill="#8a744d" font-weight="bold">ґрунтова дорога / під'їзд</text>
+  <rect x="250" y="545" width="120" height="46" rx="6" fill="#efe6d2" stroke="#c9b58a" stroke-width="1.5"/>
+  <text x="262" y="566" font-size="12" fill="#6e5c34">заїзд +</text>
+  <text x="262" y="582" font-size="12" fill="#6e5c34">паркінг</text>
+  <rect x="390" y="545" width="150" height="46" rx="6" fill="#e2e9f0" stroke="#9db4c9" stroke-width="1.5"/>
+  <text x="402" y="566" font-size="11" fill="#3f5a72">інж. вузол: свердловина,</text>
+  <text x="402" y="582" font-size="11" fill="#3f5a72">очистка стоків, ел-во</text>
+
+  <!-- Trees (preserved) -->
+  <g fill="#4e9a4a" opacity="0.85">
+    <circle cx="430" cy="250" r="16"/><circle cx="470" cy="270" r="12"/>
+    <circle cx="600" cy="300" r="15"/><circle cx="360" cy="410" r="14"/>
+    <circle cx="650" cy="430" r="13"/><circle cx="520" cy="470" r="12"/>
+    <circle cx="710" cy="360" r="14"/>
+  </g>
+
+  <!-- Units (Scenario A) -->
+  <!-- Compact 1 -->
+  <g>
+    <rect x="300" y="300" width="60" height="46" rx="4" fill="#123d2b"/>
+    <rect x="300" y="346" width="60" height="12" fill="#2f6b45"/>
+    <text x="330" y="328" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">C1</text>
+    <text x="330" y="378" font-size="11" fill="#123d2b" text-anchor="middle">Compact</text>
+  </g>
+  <!-- Compact 2 -->
+  <g>
+    <rect x="430" y="345" width="60" height="46" rx="4" fill="#123d2b"/>
+    <rect x="430" y="391" width="60" height="12" fill="#2f6b45"/>
+    <text x="460" y="373" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">C2</text>
+    <text x="460" y="423" font-size="11" fill="#123d2b" text-anchor="middle">Compact</text>
+  </g>
+  <!-- Comfort -->
+  <g>
+    <rect x="560" y="380" width="74" height="52" rx="4" fill="#1f6b3a"/>
+    <rect x="560" y="432" width="74" height="12" fill="#2f8b52"/>
+    <text x="597" y="410" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">Comfort</text>
+  </g>
+  <!-- VIP (isolated upper) -->
+  <g>
+    <rect x="640" y="215" width="92" height="60" rx="5" fill="#0e2f21" stroke="#d4af37" stroke-width="2"/>
+    <rect x="640" y="275" width="92" height="12" fill="#2f6b45"/>
+    <text x="686" y="250" font-size="13" fill="#f2d98a" text-anchor="middle" font-weight="bold">VIP</text>
+    <text x="686" y="305" font-size="11" fill="#123d2b" text-anchor="middle">вілла (найкращий вид)</text>
+  </g>
+
+  <!-- Optional shared чан -->
+  <circle cx="470" cy="470" r="16" fill="#8a5a2b"/>
+  <text x="470" y="474" font-size="11" fill="#fff" text-anchor="middle">чан</text>
+  <text x="470" y="500" font-size="10" fill="#8a5a2b" text-anchor="middle">спільна зона (опц.)</text>
+
+  <!-- SW view arrows from units -->
+  <g stroke="#1f6b3a" stroke-width="2" marker-end="url(#arrow)" opacity="0.9">
+    <line x1="300" y1="330" x2="250" y2="380"/>
+    <line x1="430" y1="375" x2="380" y2="425"/>
+    <line x1="560" y1="410" x2="510" y2="455"/>
+    <line x1="640" y1="255" x2="590" y2="300"/>
+  </g>
+
+  <!-- Compass + view label (SW to lower-left) -->
+  <g transform="translate(880,110)">
+    <circle cx="0" cy="0" r="30" fill="#fff" stroke="#123d2b" stroke-width="1.5"/>
+    <line x1="0" y1="26" x2="0" y2="-26" stroke="#123d2b" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="0" y="-32" font-size="12" fill="#123d2b" text-anchor="middle" font-weight="bold">Пн</text>
+  </g>
+  <text x="70" y="560" font-size="14" fill="#1f6b3a" font-weight="bold" transform="rotate(-40 70 560)">◤ краєвид / Пд-Зх</text>
+
+  <!-- Legend -->
+  <g transform="translate(30,600)">
+    <rect x="0" y="0" width="16" height="14" fill="#123d2b"/><text x="22" y="12" font-size="12" fill="#333">Compact / Comfort</text>
+    <rect x="150" y="0" width="16" height="14" fill="#0e2f21" stroke="#d4af37" stroke-width="1.5"/><text x="172" y="12" font-size="12" fill="#333">VIP-вілла</text>
+    <circle cx="288" cy="7" r="8" fill="#4e9a4a"/><text x="302" y="12" font-size="12" fill="#333">зрілі дерева (зберегти)</text>
+    <line x1="470" y1="7" x2="500" y2="7" stroke="#1f6b3a" stroke-width="2" marker-end="url(#arrow)"/><text x="506" y="12" font-size="12" fill="#333">напрям виду (Пд-Зх)</text>
+  </g>
+</svg>
