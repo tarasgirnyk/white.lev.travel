@@ -1,0 +1,10 @@
+# Важкі медіа з дрона — не тримаємо в git (перевищують ліміт GitHub 100 МБ)
+photo_drone/*.MP4
+photo_drone/*.mp4
+photo_drone/*.MOV
+photo_drone/*.mov
+
+# Системне
+.DS_Store
+Thumbs.db
+desktop.ini
