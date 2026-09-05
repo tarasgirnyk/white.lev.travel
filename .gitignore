@@ -8,3 +8,6 @@ photo_drone/*.mov
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# temp staging (Cowork)
+.stage_tmp/
