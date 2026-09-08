@@ -17,25 +17,11 @@ services:
       - 'host.docker.internal:host-gateway'
     volumes:
       - media:/app/media
-    expose:
-      - '3000'
-
-  caddy:
-    image: caddy:2-alpine
-    restart: unless-stopped
-    depends_on:
-      - web
+    # TLS і роутинг за доменом бере на себе системний nginx на хості
+    # (як для green.lev.travel та інших проєктів на цьому сервері).
+    # Контейнер слухає лише локально на 127.0.0.1:3300.
     ports:
-      - '80:80'
-      - '443:443'
-    environment:
-      SITE_ADDRESS: ${SITE_ADDRESS:-white.lev.travel}
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy-data:/data
-      - caddy-config:/config
+      - '127.0.0.1:3300:3000'
 
 volumes:
   media:
-  caddy-data:
-  caddy-config:

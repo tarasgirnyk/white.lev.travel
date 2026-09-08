@@ -12,7 +12,7 @@
 - **Payload CMS 3** (адмінка на `/admin`, REST на `/api/*`, GraphQL на `/api/graphql`)
 - **PostgreSQL 16** (на продакшн-сервері — нативний інстанс на хості, не в контейнері)
 - **Tailwind CSS v4**
-- Деплой: **Docker Compose** (застосунок + Caddy з авто-TLS), автодеплой — **GitHub Actions** (`.github/workflows/deploy.yml`)
+- Деплой: **Docker Compose** (застосунок, слухає локально на 127.0.0.1), TLS/роутинг — системний **nginx** на сервері (як в інших проєктів на цьому хості); автодеплой — **GitHub Actions** (`.github/workflows/deploy.yml`)
 
 ## Локальний запуск
 
@@ -43,12 +43,17 @@ web/src/
   middleware.ts              # редірект локалі + заголовок x-locale
 ```
 
-## Деплой (сервер, нативний Postgres + Docker)
+## Деплой (сервер, нативний Postgres + системний nginx)
 
 Сайт використовує **вже наявний на сервері Postgres** (не піднімає свій
 контейнер із БД — щоб не конфліктувати з іншими проєктами на цьому ж
 сервері). `web`-контейнер бачить хост через `host.docker.internal`
 (налаштовано в `docker-compose.yml` через `extra_hosts: host-gateway`).
+
+TLS і роутинг за доменом бере на себе **системний nginx** на хості (порти
+80/443 вже зайняті ним під інші проєкти) — так само, як для
+green.lev.travel та інших сайтів на цьому сервері. Контейнер `web`
+публікується лише локально на `127.0.0.1:3300`.
 
 ### 1. Один раз — підготувати базу в нативному Postgres
 
@@ -76,24 +81,72 @@ host    whitelevtravel    wlt    172.17.0.0/16    scram-sha-256
 Після правок — `systemctl restart postgresql`. Переконайся, що порт
 5432 не відкритий назовні у файрволі (тільки з докер-мережі/локально).
 
-### 2. Один раз — перше розгортання
+### 2. Один раз — nginx-вхост і TLS-сертифікат
+
+За зразком інших сайтів на сервері (`/etc/nginx/sites-available/`),
+створи `/etc/nginx/sites-available/white-lev-travel`:
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    server_name white.lev.travel;
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+        default_type text/plain;
+        try_files $uri =404;
+    }
+    location / {
+        return 308 https://white.lev.travel$request_uri;
+    }
+}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name white.lev.travel;
+    ssl_certificate /etc/letsencrypt/live/white.lev.travel/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/white.lev.travel/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:WhiteLevSSL:10m;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    client_max_body_size 20m;
+    location / {
+        proxy_pass http://127.0.0.1:3300;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_read_timeout 60s;
+    }
+}
+```
+
+```bash
+ln -s /etc/nginx/sites-available/white-lev-travel /etc/nginx/sites-enabled/
+nginx -t && systemctl reload nginx     # спершу тільки HTTP-блок відпрацює (SSL-файлів ще нема)
+certbot certonly --webroot -w /var/www/certbot -d white.lev.travel
+nginx -t && systemctl reload nginx     # тепер підхопить сертифікат і 443-блок
+```
+
+### 3. Один раз — перше розгортання застосунку
 
 ```bash
 git clone https://github.com/tarasgirnyk/white.lev.travel.git /opt/white.lev.travel
 cd /opt/white.lev.travel/web
 cp .env.production.example .env
-# заповни: PAYLOAD_SECRET, DATABASE_URI (з паролем із кроку 1),
-# ADMIN_PASSWORD, SITE_ADDRESS (домен має вже вказувати на цей сервер)
+# заповни: PAYLOAD_SECRET, DATABASE_URI (з паролем із кроку 1), ADMIN_PASSWORD
 ./deploy.sh                    # git pull + docker compose up -d --build
 ```
 
-`docker-compose.yml` піднімає:
-- **web** — Next/Payload; на старті застосовує міграції, потім сідить БД (onInit);
-- **caddy** — реверс-проксі з автоматичним HTTPS для `SITE_ADDRESS`.
+`docker-compose.yml` піднімає **web** (Next/Payload на 127.0.0.1:3300;
+на старті застосовує міграції, потім сідить БД через onInit). Медіа —
+у volume `media`. Адмінка — `https://white.lev.travel/admin`.
 
-Медіа зберігаються у volume `media`. Адмінка — `https://<домен>/admin`.
-
-### 3. Автодеплой при кожному пуші в `main`
+### 4. Автодеплой при кожному пуші в `main`
 
 У GitHub репозиторію → **Settings → Secrets and variables → Actions**
 додай секрети: `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`
