@@ -1,0 +1,48 @@
+{
+  "name": "white-lev-travel",
+  "version": "0.1.0",
+  "description": "White.Lev.Travel · «Білий Лев» — сайт заміського комплексу приватних будинків",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "payload": "payload",
+    "seed": "PAYLOAD_SEED=true payload run src/seed/run.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.88.0",
+    "@payloadcms/next": "3.88.0",
+    "@payloadcms/richtext-lexical": "3.88.0",
+    "@payloadcms/ui": "3.88.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.9.0",
+    "next": "15.4.11",
+    "payload": "3.88.0",
+    "react": "19.1.9",
+    "react-dom": "19.1.9",
+    "sharp": "0.34.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^22.10.5",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.9",
+    "postcss": "^8.5.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild"
+    ]
+  }
+}

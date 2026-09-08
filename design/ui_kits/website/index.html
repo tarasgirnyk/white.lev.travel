@@ -1,0 +1,193 @@
+<!-- @dsCard group="Website" viewport="1280x900" name="White.Lev.Travel — Landing" subtitle="Full marketing site for the hotel complex" -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+<meta charset="UTF-8">
+<title>White.Lev.Travel — Білий Лев</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+a{color:var(--color-accent)}
+a:hover{color:var(--color-accent-strong)}
+.wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad)}
+.eyebrow{font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-accent);font-weight:600}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { Button, Badge, PropertyCard, FaqItem } = window.WhiteLevTravelDesignSystem_c8e3c2;
+const P = (p) => '../../assets/photography/' + p;
+
+function Nav(){
+  const [open,setOpen] = React.useState(false);
+  return (
+    <div style={{position:'sticky',top:0,zIndex:20,background:'rgba(10,10,9,0.72)',backdropFilter:'blur(var(--blur-panel))',borderBottom:'1px solid var(--color-border)'}}>
+      <div className="wrap" style={{display:'flex',alignItems:'center',justifyContent:'space-between',height:76}}>
+        <img src="../../assets/logo-on-dark.svg" alt="Білий Лев" style={{height:51}}/>
+        <div style={{display:'flex',gap:32,fontSize:14}}>
+          <a href="#tiers" style={{color:'var(--color-text)',textDecoration:'none'}}>Будинки</a>
+          <a href="#location" style={{color:'var(--color-text)',textDecoration:'none'}}>Локація</a>
+          <a href="#faq" style={{color:'var(--color-text)',textDecoration:'none'}}>Питання</a>
+        </div>
+        <Button variant="primary" href="#tiers">Забронювати</Button>
+      </div>
+    </div>
+  );
+}
+
+function Hero(){
+  return (
+    <div style={{position:'relative',height:'92vh',minHeight:640,overflow:'hidden'}}>
+      <img src={P('vip-exterior.png')} alt="Будинок White.Lev.Travel у горах на заході сонця" style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}/>
+      <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg,rgba(10,10,9,0.35) 0%,rgba(10,10,9,0.15) 40%,rgba(10,10,9,0.9) 100%)'}}/>
+      <div className="wrap" style={{position:'absolute',left:0,right:0,bottom:'var(--space-2xl)',display:'flex',flexDirection:'column',gap:'var(--space-sm)'}}>
+        <div className="eyebrow">White.Lev.Travel · Бойківщина</div>
+        <h1 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h1)',lineHeight:'var(--leading-tight)',letterSpacing:'var(--tracking-tight)',margin:0,maxWidth:900}}>Приватний відпочинок серед зелених гір</h1>
+        <p style={{fontSize:'var(--text-body-lg)',color:'var(--linen-1)',maxWidth:560,margin:0,lineHeight:'var(--leading-body)'}}>Окремі будинки на схилі, кожен зі своєю терасою, краєвидом і чаном. Мінімум сусідів, максимум тиші — для пари або сім'ї з дітьми.</p>
+        <div style={{display:'flex',gap:16,marginTop:8}}>
+          <Button variant="primary" href="#tiers">Обрати будинок</Button>
+          <Button variant="ghost" href="#location">Про локацію</Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const VALUES = [
+  {t:'Природа', d:"Кожен будинок стоїть у мальовничій точці ділянки — з видом на гори, ліс або долину."},
+  {t:'Приватність', d:"Вікна, тераси й чани орієнтовані так, щоб гості різних будинків не бачили одне одного."},
+  {t:'Комфорт', d:"Продумано для пари або сім'ї з двома дітьми в будь-яку пору року."},
+];
+function Values(){
+  return (
+    <div className="wrap" style={{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:'var(--space-lg)',padding:'var(--space-2xl) 0'}}>
+      {VALUES.map((v,i)=>(
+        <div key={i} style={{borderTop:'1px solid var(--color-border)',paddingTop:'var(--space-md)'}}>
+          <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h4)',margin:'0 0 8px',letterSpacing:'var(--tracking-tight)'}}>{v.t}</h3>
+          <p style={{fontSize:'var(--text-body-sm)',color:'var(--color-text-muted)',lineHeight:'var(--leading-body)',margin:0}}>{v.d}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const TIERS = [
+  {image:P('compact-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Compact',description:"Окрема спальня, кухня-вітальня з місцем для сну дітей і тераса з видом на долину.",amenities:['Тераса','Барбекю','Панорамне скління']},
+  {image:P('comfort-exterior.png'),tier:'Comfort',size:'45–55 м²',title:'Comfort',description:"Більша тераса, камін і чан під відкритим небом — для тих, хто цінує підвищений комфорт.",amenities:['Чан','Камін','Панорамне скління']},
+  {image:P('vip-exterior.png'),tier:'VIP Villa',size:'70–90 м²',title:'VIP Villa',description:"Простора вілла з приватною сауною, окремою терасою для барбекю і найкращою точкою на ділянці.",amenities:['Сауна','Чан','Дві спальні']},
+];
+function Tiers(){
+  return (
+    <div id="tiers" className="wrap" style={{padding:'var(--space-2xl) 0'}}>
+      <div className="eyebrow">Рівні</div>
+      <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 var(--space-lg)',letterSpacing:'var(--tracking-tight)',maxWidth:640}}>Обери свій будинок</h2>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:'var(--space-md)'}}>
+        {TIERS.map((t,i)=><PropertyCard key={i} {...t}/>)}
+      </div>
+    </div>
+  );
+}
+
+const GALLERY = [
+  {image:P('compact-interior.png'),label:'Compact'},
+  {image:P('comfort-interior.png'),label:'Comfort'},
+  {image:P('vip-interior.png'),label:'VIP Villa'},
+];
+function Gallery(){
+  return (
+    <div style={{padding:'var(--space-2xl) 0',background:'var(--color-surface)',borderTop:'1px solid var(--color-border)',borderBottom:'1px solid var(--color-border)'}}>
+      <div className="wrap">
+        <div className="eyebrow">Інтер'єр</div>
+        <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 var(--space-lg)',letterSpacing:'var(--tracking-tight)',maxWidth:640}}>Тепло серед дерева і каменю</h2>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:2}}>
+          {GALLERY.map((g,i)=>(
+            <div key={i} style={{position:'relative',aspectRatio:'4/3',overflow:'hidden'}}>
+              <img src={g.image} alt={g.label} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+              <div style={{position:'absolute',bottom:12,left:12}}><Badge tone="outline">{g.label}</Badge></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const STEPS = [
+  "Просте онлайн-бронювання і зрозуміла інформація про дорогу.",
+  "Заїзд і паркування без пошуку адміністратора.",
+  "Чистий теплий будинок з підготовленою спальнею.",
+  "Приватний відпочинок: тераса, чан, камін або прогулянка в горах.",
+];
+function Journey(){
+  return (
+    <div id="location" className="wrap" style={{padding:'var(--space-2xl) 0'}}>
+      <div className="eyebrow">Досвід гостя</div>
+      <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 var(--space-lg)',letterSpacing:'var(--tracking-tight)',maxWidth:640}}>Від бронювання до тиші</h2>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,minmax(0,1fr))',gap:'var(--space-md)'}}>
+        {STEPS.map((s,i)=>(
+          <div key={i} style={{display:'flex',flexDirection:'column',gap:8}}>
+            <div style={{fontFamily:'var(--font-display)',fontSize:32,color:'var(--color-accent)',letterSpacing:'var(--tracking-tight)'}}>{String(i+1).padStart(2,'0')}</div>
+            <p style={{fontSize:'var(--text-body-sm)',color:'var(--color-text-muted)',lineHeight:'var(--leading-body)',margin:0}}>{s}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const FAQS = [
+  {q:"Скільки гостей вміщує будинок?", a:"Compact і Comfort розраховані на двох дорослих і до двох дітей. VIP Villa приймає більшу сім'ю."},
+  {q:"Чи можна з дітьми?", a:"Так — у вітальні передбачено окреме спальне місце для дітей у Compact і Comfort."},
+  {q:"Чи бачать гості різних будинків одне одного?", a:"Ні. Тераси, вікна й чани розташовані так, щоб зберегти приватність кожного будинку."},
+  {q:"Що входить у відпочинок?", a:"Готовий до заїзду будинок, тераса з краєвидом і власна зона барбекю чи чан — залежно від рівня."},
+];
+function Faq(){
+  return (
+    <div id="faq" className="wrap" style={{padding:'var(--space-2xl) 0',maxWidth:760}}>
+      <div className="eyebrow">Питання</div>
+      <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 var(--space-md)',letterSpacing:'var(--tracking-tight)'}}>Питання та відповіді</h2>
+      <div>{FAQS.map((f,i)=><FaqItem key={i} question={f.q} answer={f.a} defaultOpen={i===0}/>)}</div>
+    </div>
+  );
+}
+
+function Footer(){
+  return (
+    <div style={{borderTop:'1px solid var(--color-border)',padding:'var(--space-xl) 0'}}>
+      <div className="wrap" style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'var(--space-lg)'}}>
+        <div>
+          <img src="../../assets/logo-on-dark.svg" alt="Білий Лев" style={{height:57}}/>
+          <div style={{fontSize:12,letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',color:'var(--color-text-muted)',marginTop:6}}>white.lev.travel</div>
+        </div>
+        <div style={{display:'flex',gap:'var(--space-2xl)',fontSize:14}}>
+          <div style={{display:'flex',flexDirection:'column',gap:8}}>
+            <span style={{color:'var(--color-text-muted)',fontSize:12,textTransform:'uppercase',letterSpacing:'var(--tracking-eyebrow)'}}>Комплекс</span>
+            <a href="#tiers" style={{textDecoration:'none'}}>Будинки</a>
+            <a href="#location" style={{textDecoration:'none'}}>Локація</a>
+          </div>
+          <div style={{display:'flex',flexDirection:'column',gap:8}}>
+            <span style={{color:'var(--color-text-muted)',fontSize:12,textTransform:'uppercase',letterSpacing:'var(--tracking-eyebrow)'}}>Мережа</span>
+            <a href="https://lev.travel" style={{textDecoration:'none'}}>lev.travel</a>
+            <a href="https://green.lev.travel" style={{textDecoration:'none'}}>green.lev.travel</a>
+          </div>
+        </div>
+      </div>
+      <div className="wrap" style={{marginTop:'var(--space-lg)',fontSize:12,color:'var(--color-text-muted)'}}>© 2026 white.lev.travel</div>
+    </div>
+  );
+}
+
+function App(){
+  return (<React.Fragment><Nav/><Hero/><Values/><Tiers/><Gallery/><Journey/><Faq/><Footer/></React.Fragment>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
