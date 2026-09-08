@@ -5,6 +5,7 @@ const en: Dict = {
   brandSub: '“White Lion”',
   nav: {
     houses: 'Houses',
+    series: 'Green Love',
     economics: 'Economics',
     location: 'Location',
     masterplan: 'Master plan',
@@ -14,13 +15,92 @@ const en: Dict = {
     book: 'Book a stay',
   },
   hero: {
-    kicker: 'Carpathian foothills · Boykivshchyna · Varush tract',
-    title: 'View houses in the mountains — an income asset and a getaway',
+    kicker: 'White.Lev.Travel · Boykivshchyna',
+    title: 'A private retreat among green mountains',
     subtitle:
-      'A country estate of private houses in one style. Buy a house as an asset that earns from rentals, or come to rest in the silence of the foothills.',
-    ctaInvest: 'I want to invest',
-    ctaBook: 'I want to stay',
+      'Detached houses on a hillside, each with its own terrace, view and hot tub. Fewest neighbours, most silence — for a couple or a family with kids.',
+    ctaInvest: 'Choose a house',
+    ctaBook: 'About the location',
     scroll: 'Scroll down',
+  },
+  values: {
+    natureTitle: 'Nature',
+    natureText:
+      'Each house sits on a scenic spot of the plot — with a view of the mountains, the forest or the valley.',
+    privacyTitle: 'Privacy',
+    privacyText:
+      'Windows, terraces and hot tubs are oriented so that guests of different houses do not see one another.',
+    comfortTitle: 'Comfort',
+    comfortText: 'Designed for a couple or a family with two children, in any season.',
+  },
+  series: {
+    eyebrow: 'Green Love Travel · interior',
+    title: 'Four themes of one Compact',
+    subtitle:
+      'The same Compact floor plan, its own interior theme and its own nightly rate for each house. For two adult guests only, no children.',
+    perNight: '/night',
+    book: 'Book',
+    exterior: 'exterior',
+    interior: 'interior',
+    photoSoon: 'Photos coming',
+    houses: [
+      {
+        no: '01',
+        name: 'Adam & Eve',
+        tagline: 'White base · red headboard · mirrored accents',
+        price: '3,500 ₴',
+      },
+      {
+        no: '02',
+        name: 'Picasso',
+        tagline: 'Art · music · Lviv memories',
+        price: '3,500 ₴',
+      },
+      {
+        no: '03',
+        name: 'Max Royal',
+        tagline: 'Dark wood · textured stone · light textiles · muted green',
+        price: '3,500 ₴',
+      },
+      {
+        no: '04',
+        name: 'Romeo & Juliet',
+        tagline: 'Warm stone · arched motifs · light canopy · burgundy velvet',
+        price: '3,500 ₴',
+      },
+    ],
+  },
+  journey: {
+    eyebrow: 'Guest experience',
+    title: 'From booking to silence',
+    steps: [
+      'Simple online booking and clear directions for the drive.',
+      'Check-in and parking without hunting for a manager.',
+      'A clean, warm house with the bedroom made up.',
+      'A private rest: terrace, hot tub, fireplace or a walk in the mountains.',
+    ],
+  },
+  faq: {
+    eyebrow: 'Questions',
+    title: 'Questions and answers',
+    items: [
+      {
+        q: 'How many guests does a house hold?',
+        a: 'The themed Compacts of the Green Love series are for two adults only, no children. The base Compact is for a couple or a couple with 1–2 kids.',
+      },
+      {
+        q: 'Can we come with children?',
+        a: 'Not in the Green Love series — it is a format for two. For a family with kids, the base Compact has a separate sleeping space in the living room.',
+      },
+      {
+        q: 'Do guests of different houses see one another?',
+        a: 'No. Terraces, windows and hot tubs are placed to keep each house private.',
+      },
+      {
+        q: 'What is included in a stay?',
+        a: 'A move-in-ready house, a terrace with a view and your own BBQ area or hot tub — depending on the house.',
+      },
+    ],
   },
   audience: {
     title: 'Two paths',

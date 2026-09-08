@@ -20,6 +20,8 @@ Sources given for this project (stored here for reference, not all fetchable by 
 
 One product/surface: the **White.Lev.Travel marketing site** — a single hotel complex (not a chain yet), presented as three house tiers guests can book: **Compact**, **Comfort**, **VIP Villa**.
 
+The Compact tier now also exists as **Green Love Travel**: four Compact houses, identical construction and plan, each with its own interior theme — «Адам і Єва», «Пікассо», «Max Royal», «Ромео і Джульєтта». Adults-only (two guests, no kids), distinct from the family-oriented base Compact. See `uploads/white-lev-concept.pdf` (§3, "Розширена лінійка та тематичні Compact"). The landing's "Чотири теми одного Compact" section (`ui_kits/website/index.html`) presents these four as `<image-slot>` placeholders — the owner supplies real photography per house; until then the concept renders in `uploads/26–30_*` (top-view plans + one interior shot for Адам і Єва) are the only visual reference.
+
 ## Content fundamentals
 
 - **Language:** Ukrainian. Direct, warm, unhurried — closer to a boutique-stay brochure than a booking-engine funnel (contrast with `lev.travel`'s brisk "знаходь / порівнюй / бронюй" search-tool voice).

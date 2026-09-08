@@ -1,276 +1,3 @@
-/* @ds-bundle: {"format":4,"namespace":"WhiteLevTravelDesignSystem_c8e3c2","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"FaqItem","sourcePath":"components/core/FaqItem.jsx"},{"name":"PropertyCard","sourcePath":"components/core/PropertyCard.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"a94a33bc2e39","components/core/Button.jsx":"609cd80c460a","components/core/FaqItem.jsx":"467432672a67","components/core/PropertyCard.jsx":"a3e16013ee51","image-slot.js":"fff26d081c8d"},"inlinedExternals":[],"unexposedExports":[]} */
-
-(() => {
-
-const __ds_ns = (window.WhiteLevTravelDesignSystem_c8e3c2 = window.WhiteLevTravelDesignSystem_c8e3c2 || {});
-
-const __ds_scope = {};
-
-(__ds_ns.__errors = __ds_ns.__errors || []);
-
-// components/core/Badge.jsx
-try { (() => {
-/** Small uppercase tier label (Compact / Comfort / VIP). */
-function Badge({
-  children,
-  tone = 'wood'
-}) {
-  const tones = {
-    wood: {
-      background: 'var(--color-wood-deep)',
-      color: 'var(--linen-0)'
-    },
-    amber: {
-      background: 'var(--color-accent)',
-      color: 'var(--color-text-on-accent)'
-    },
-    outline: {
-      background: 'transparent',
-      color: 'var(--color-text-muted)',
-      border: '1px solid var(--color-border-strong)'
-    }
-  };
-  return React.createElement('span', {
-    style: {
-      fontFamily: 'var(--font-body)',
-      fontSize: '11px',
-      fontWeight: 700,
-      letterSpacing: 'var(--tracking-eyebrow)',
-      textTransform: 'uppercase',
-      padding: '5px 12px',
-      borderRadius: 'var(--radius-pill)',
-      display: 'inline-block',
-      ...tones[tone]
-    }
-  }, children);
-}
-Object.assign(__ds_scope, { Badge });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Badge.jsx", error: String((e && e.message) || e) }); }
-
-// components/core/Button.jsx
-try { (() => {
-function Button({
-  children,
-  variant = 'primary',
-  href,
-  onClick,
-  type = 'button'
-}) {
-  const styles = {
-    primary: {
-      background: 'var(--color-accent)',
-      color: 'var(--color-text-on-accent)',
-      border: '1px solid var(--color-accent)'
-    },
-    ghost: {
-      background: 'transparent',
-      color: 'var(--color-text)',
-      border: '1px solid var(--color-border-strong)'
-    }
-  };
-  const base = {
-    fontFamily: 'var(--font-body)',
-    fontSize: 'var(--text-body-sm)',
-    fontWeight: 600,
-    letterSpacing: '0.01em',
-    padding: '14px 28px',
-    borderRadius: 'var(--radius-sm)',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    textDecoration: 'none',
-    transition: `background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard)`,
-    ...styles[variant]
-  };
-  const Tag = href ? 'a' : 'button';
-  return React.createElement(Tag, {
-    href,
-    onClick,
-    type: href ? undefined : type,
-    style: base
-  }, children);
-}
-Object.assign(__ds_scope, { Button });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Button.jsx", error: String((e && e.message) || e) }); }
-
-// components/core/FaqItem.jsx
-try { (() => {
-const {
-  useState
-} = React;
-/** Single FAQ accordion row: click question to expand answer. */
-function FaqItem({
-  question,
-  answer,
-  defaultOpen = false
-}) {
-  const [open, setOpen] = useState(defaultOpen);
-  return React.createElement('div', {
-    style: {
-      borderBottom: '1px solid var(--color-border)'
-    }
-  }, React.createElement('button', {
-    onClick: () => setOpen(!open),
-    style: {
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      gap: '16px',
-      background: 'transparent',
-      border: 'none',
-      cursor: 'pointer',
-      textAlign: 'left',
-      padding: 'var(--space-md) 0',
-      fontFamily: 'var(--font-display)',
-      fontSize: 'var(--text-h4)',
-      color: 'var(--color-text)',
-      letterSpacing: 'var(--tracking-tight)'
-    }
-  }, question, React.createElement('svg', {
-    width: 16,
-    height: 16,
-    viewBox: '0 0 16 16',
-    style: {
-      flexShrink: 0,
-      transform: open ? 'rotate(45deg)' : 'none',
-      transition: `transform var(--dur-fast) var(--ease-standard)`
-    }
-  }, React.createElement('path', {
-    d: 'M8 1V15M1 8H15',
-    stroke: 'var(--color-accent)',
-    strokeWidth: 1.5
-  }))), open ? React.createElement('p', {
-    style: {
-      margin: 0,
-      padding: '0 0 var(--space-md)',
-      maxWidth: 640,
-      fontFamily: 'var(--font-body)',
-      fontSize: 'var(--text-body)',
-      lineHeight: 'var(--leading-body)',
-      color: 'var(--color-text-muted)'
-    }
-  }, answer) : null);
-}
-Object.assign(__ds_scope, { FaqItem });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/FaqItem.jsx", error: String((e && e.message) || e) }); }
-
-// components/core/PropertyCard.jsx
-try { (() => {
-/** One house tier: photo, tier badge, size, blurb, amenity list. */
-function PropertyCard({
-  image,
-  tier,
-  size,
-  title,
-  description,
-  amenities = []
-}) {
-  return React.createElement('div', {
-    style: {
-      background: 'var(--color-surface)',
-      border: '1px solid var(--color-border)',
-      borderRadius: 'var(--radius-md)',
-      overflow: 'hidden',
-      display: 'flex',
-      flexDirection: 'column',
-      transition: `border-color var(--dur-med) var(--ease-standard), box-shadow var(--dur-med) var(--ease-standard)`
-    }
-  }, React.createElement('div', {
-    style: {
-      position: 'relative',
-      aspectRatio: '4/3',
-      overflow: 'hidden'
-    }
-  }, React.createElement('img', {
-    src: image,
-    alt: title,
-    style: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      display: 'block'
-    }
-  }), React.createElement('div', {
-    style: {
-      position: 'absolute',
-      top: 16,
-      left: 16
-    }
-  }, React.createElement(__ds_scope.Badge, {
-    tone: 'wood'
-  }, tier))), React.createElement('div', {
-    style: {
-      padding: 'var(--space-md)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 'var(--space-xs)'
-    }
-  }, React.createElement('div', {
-    style: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'baseline',
-      gap: '12px'
-    }
-  }, React.createElement('h3', {
-    style: {
-      fontFamily: 'var(--font-display)',
-      fontSize: 'var(--text-h4)',
-      color: 'var(--color-text)',
-      margin: 0,
-      letterSpacing: 'var(--tracking-tight)'
-    }
-  }, title), React.createElement('span', {
-    style: {
-      fontFamily: 'var(--font-body)',
-      fontSize: 'var(--text-body-sm)',
-      color: 'var(--color-text-muted)',
-      whiteSpace: 'nowrap'
-    }
-  }, size)), React.createElement('p', {
-    style: {
-      fontFamily: 'var(--font-body)',
-      fontSize: 'var(--text-body-sm)',
-      color: 'var(--color-text-muted)',
-      lineHeight: 'var(--leading-body)',
-      margin: 0
-    }
-  }, description), amenities.length ? React.createElement('ul', {
-    style: {
-      listStyle: 'none',
-      padding: 0,
-      margin: '4px 0 0',
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '8px 16px'
-    }
-  }, amenities.map((a, i) => React.createElement('li', {
-    key: i,
-    style: {
-      fontFamily: 'var(--font-body)',
-      fontSize: '13px',
-      color: 'var(--color-text)',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '6px'
-    }
-  }, React.createElement('span', {
-    style: {
-      width: 4,
-      height: 4,
-      borderRadius: '50%',
-      background: 'var(--color-accent)',
-      display: 'inline-block'
-    }
-  }), a))) : null));
-}
-Object.assign(__ds_scope, { PropertyCard });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/PropertyCard.jsx", error: String((e && e.message) || e) }); }
-
-// image-slot.js
-try { (() => {
 // @ds-adherence-ignore -- omelette starter scaffold (raw elements/hex/px by design)
 // Copied omelette starter. Re-running copy_starter_component with this kind overwrites this file with the latest version (page content is unaffected).
 /* BEGIN USAGE */
@@ -378,7 +105,8 @@ try { (() => {
   // Keep the utm_source value in sync with UTM_SOURCE in
   // platform/web-agent/unsplash.ts — this file is a project-local
   // artifact and cannot import it (equality is pinned by tests).
-  const UNSPLASH_HOMEPAGE_HREF = 'https://unsplash.com/?utm_source=claude_design&utm_medium=referral';
+  const UNSPLASH_HOMEPAGE_HREF =
+    'https://unsplash.com/?utm_source=claude_design&utm_medium=referral';
   // Host rule mirrors the hotlink validator that admits Unsplash srcs into
   // pages in the first place (cdn$ in unsplash.ts: apex or any subdomain)
   // — Unsplash+ results serve from plus.unsplash.com, not just images.*,
@@ -387,9 +115,11 @@ try { (() => {
   // Trailing-dot FQDNs (images.unsplash.com.) are the same host to the
   // browser but would miss the regex — strip one dot so the check fails
   // CLOSED (unrecognized-but-real Unsplash srcs must error, not render).
-  const isUnsplashHost = u => {
+  const isUnsplashHost = (u) => {
     try {
-      return /(^|\.)unsplash\.com$/.test(new URL(u, document.baseURI).hostname.replace(/\.$/, ''));
+      return /(^|\.)unsplash\.com$/.test(
+        new URL(u, document.baseURI).hostname.replace(/\.$/, '')
+      );
     } catch {
       return false;
     }
@@ -399,7 +129,7 @@ try { (() => {
   // query param, never overwrites an existing utm_source, and passes
   // non-Unsplash URLs through untouched. Input is an ABSOLUTE validated
   // http(s) URL (the credit render funnel resolves + validates first).
-  const withReferral = href => {
+  const withReferral = (href) => {
     try {
       const u = new URL(href);
       if (!/(^|\.)unsplash\.com$/.test(u.hostname.replace(/\.$/, ''))) {
@@ -438,29 +168,31 @@ try { (() => {
   const tombstones = new Set();
   let loaded = false;
   let loadP = null;
+
   function load() {
     if (loadP) return loadP;
-    loadP = fetch(STATE_FILE).then(r => r.ok ? r.json() : null).then(j => {
-      // Merge: sidecar loses to any in-memory change that raced ahead of
-      // the fetch (drop or clear) so neither is clobbered by hydration.
-      if (j && typeof j === 'object') {
-        const merged = Object.assign({}, j, slots);
-        // A framing-only write that raced ahead of hydration must not
-        // drop a user image that's only on disk — inherit u from the
-        // sidecar for any in-memory entry that lacks one.
-        for (const k in slots) {
-          if (merged[k] && !merged[k].u && j[k]) {
-            merged[k].u = typeof j[k] === 'string' ? j[k] : j[k].u;
+    loadP = fetch(STATE_FILE)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        // Merge: sidecar loses to any in-memory change that raced ahead of
+        // the fetch (drop or clear) so neither is clobbered by hydration.
+        if (j && typeof j === 'object') {
+          const merged = Object.assign({}, j, slots);
+          // A framing-only write that raced ahead of hydration must not
+          // drop a user image that's only on disk — inherit u from the
+          // sidecar for any in-memory entry that lacks one.
+          for (const k in slots) {
+            if (merged[k] && !merged[k].u && j[k]) {
+              merged[k].u = typeof j[k] === 'string' ? j[k] : j[k].u;
+            }
           }
+          for (const id of tombstones) delete merged[id];
+          slots = merged;
         }
-        for (const id of tombstones) delete merged[id];
-        slots = merged;
-      }
-      tombstones.clear();
-    }).catch(() => {}).then(() => {
-      loaded = true;
-      subs.forEach(fn => fn());
-    });
+        tombstones.clear();
+      })
+      .catch(() => {})
+      .then(() => { loaded = true; subs.forEach((fn) => fn()); });
     return loadP;
   }
 
@@ -485,55 +217,38 @@ try { (() => {
     if (!loaded) return;
     const w = window.omelette && window.omelette.writeFile;
     if (!w) return;
-    try {
-      Promise.resolve(w(STATE_FILE, JSON.stringify(slots))).catch(() => {});
-    } catch (e) {}
+    try { Promise.resolve(w(STATE_FILE, JSON.stringify(slots))).catch(() => {}); } catch (e) {}
   }
   function save() {
-    if (saving) {
-      saveDirty = true;
-      return;
-    }
+    if (saving) { saveDirty = true; return; }
     const w = window.omelette && window.omelette.writeFile;
     if (!w) return;
     saving = true;
-    Promise.resolve(w(STATE_FILE, JSON.stringify(slots))).catch(() => {}).then(() => {
-      saving = false;
-      if (saveDirty) {
-        saveDirty = false;
-        save();
-      }
-    });
+    Promise.resolve(w(STATE_FILE, JSON.stringify(slots)))
+      .catch(() => {})
+      .then(() => { saving = false; if (saveDirty) { saveDirty = false; save(); } });
   }
+
   const S_MAX = 5;
-  const clampS = s => Math.max(1, Math.min(S_MAX, s));
+  const clampS = (s) => Math.max(1, Math.min(S_MAX, s));
 
   // Normalize a stored slot value. Pre-reframe sidecars stored a bare
   // data-URL string; newer ones store {u, s, x, y}. Either shape is valid.
   function getSlot(id) {
     const v = slots[id];
     if (!v) return null;
-    return typeof v === 'string' ? {
-      u: v,
-      s: 1,
-      x: 0,
-      y: 0
-    } : v;
+    return typeof v === 'string' ? { u: v, s: 1, x: 0, y: 0 } : v;
   }
+
   function setSlot(id, val) {
     if (!id) return;
-    if (val) {
-      slots[id] = val;
-      tombstones.delete(id);
-    } else {
-      delete slots[id];
-      if (!loaded) tombstones.add(id);
-    }
-    subs.forEach(fn => fn());
+    if (val) { slots[id] = val; tombstones.delete(id); }
+    else { delete slots[id]; if (!loaded) tombstones.add(id); }
+    subs.forEach((fn) => fn());
     // A drop is rare + high-value — write immediately so nav-away can't lose
     // it. Gate on the initial read so we don't overwrite a sidecar we haven't
     // merged yet; the merge in load() keeps this change once the read lands.
-    if (loaded) save();else load().then(save);
+    if (loaded) save(); else load().then(save);
   }
 
   // ── Image downscale ─────────────────────────────────────────────────────
@@ -549,8 +264,7 @@ try { (() => {
       const w = Math.max(1, Math.round(bitmap.width * scale));
       const h = Math.max(1, Math.round(bitmap.height * scale));
       const canvas = document.createElement('canvas');
-      canvas.width = w;
-      canvas.height = h;
+      canvas.width = w; canvas.height = h;
       canvas.getContext('2d').drawImage(bitmap, 0, 0, w, h);
       return canvas.toDataURL('image/webp', 0.85);
     } finally {
@@ -560,92 +274,168 @@ try { (() => {
 
   // ── Custom element ──────────────────────────────────────────────────────
   const stylesheet =
-  // Fill the container by default: slots are usually placed inside a
-  // sized wrapper (a hero frame, a grid cell, an inset:0 layer) and are
-  // expected to take that box — a fixed intrinsic size would render as
-  // a small tile in the corner of a full-bleed wrapper instead.
-  // aspect-ratio is the companion fallback that keeps a bare slot
-  // visible when the parent's height is indefinite: height:100%
-  // resolves to auto there, and the ratio then derives height from
-  // width instead of letting the slot collapse to zero height.
-  // Explicit width/height on the element override all of this.
-  // color:inherit (not a fixed near-black): the placeholder chrome —
-  // empty-state icon/caption (currentColor) and the dashed ring — must
-  // read on dark decks too, and the slide's own text color is the one
-  // color guaranteed to contrast with the slide background. The soft
-  // look comes from opacity on those parts, not from a baked-in alpha.
-  ':host{display:block;position:relative;' + '  font:13px/1.3 system-ui,-apple-system,sans-serif;' + '  width:100%;height:100%;aspect-ratio:3/2}' + '.empty .cap,.empty .sub{opacity:.75}' + '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(127,127,127,.08)}' +
-  // .frame img (clipped) and .spill (unclipped ghost + handles) share the
-  // same left/top/width/height in frame-%, computed by _applyView(), so the
-  // inside-mask crop and the outside-mask spill stay pixel-aligned.
-  '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' + '  -webkit-user-drag:none;user-select:none;touch-action:none}' +
-  // Reframe mode (double-click): the full image spills past the mask. The
-  // spill layer is sized to the IMAGE bounds so its corners are where the
-  // resize handles belong. The ghost <img> inside is translucent; the real
-  // clipped <img> underneath shows the opaque in-mask crop.
-  // popover=manual promotes the spill to the top layer on reframe, so it is
-  // not clipped by any overflow:hidden / clip-path / scroll-container
-  // ancestor (a plain z-index can't escape overflow clipping). UA popover
-  // defaults (inset:0;margin:auto) are reset; _applyView sets viewport px.
-  '.spill{position:fixed;margin:0;inset:auto;border:0;padding:0;background:transparent;' + '  overflow:visible;transform:translate(-50%,-50%);z-index:1;cursor:grab;touch-action:none}' + ':host([data-panning]) .spill{cursor:grabbing}' + '.spill .ghost{position:absolute;inset:0;width:100%;height:100%;opacity:.35;' + '  pointer-events:none;-webkit-user-drag:none;user-select:none;' + '  box-shadow:0 0 0 1px rgba(0,0,0,.2),0 12px 32px rgba(0,0,0,.2)}' + '.spill .handle{position:absolute;width:12px;height:12px;border-radius:50%;' + '  background:#fff;box-shadow:0 0 0 1.5px #c96442,0 1px 3px rgba(0,0,0,.3);' + '  transform:translate(-50%,-50%)}' + '.spill .handle[data-c=nw]{left:0;top:0;cursor:nwse-resize}' + '.spill .handle[data-c=ne]{left:100%;top:0;cursor:nesw-resize}' + '.spill .handle[data-c=sw]{left:0;top:100%;cursor:nesw-resize}' + '.spill .handle[data-c=se]{left:100%;top:100%;cursor:nwse-resize}' + ':host([data-reframe]){z-index:10}' + ':host([data-reframe]) .frame{box-shadow:0 0 0 2px #c96442}' + '.empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;' + '  justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;' + '  cursor:pointer;user-select:none}' + '.empty svg{opacity:.45}' + '.empty .cap{max-width:90%;font-weight:500;letter-spacing:.01em}' + '.empty .sub{font-size:11px}' + '.empty .sub u{text-underline-offset:2px}' + '.empty:hover .sub{opacity:1}' + ':host([data-over]) .frame{outline:2px solid #c96442;outline-offset:-2px;' + '  background:rgba(201,100,66,.10)}' + '.ring{position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;' + '  opacity:.35;transition:border-color .12s,opacity .12s}' + ':host([data-over]) .ring{border-color:#c96442;opacity:1}' + ':host([data-filled]) .ring{display:none}' +
-  // Controls overlay INSIDE the frame, pinned to the top-right corner, so
-  // a full-bleed slot in an overflow:hidden container still shows them
-  // (the old below-mask placement got clipped). Credit sits bottom-left,
-  // so top-right avoids collision. The blurred pill background keeps them
-  // legible over the image.
-  // The UA [popover] base rule styles the element in EVERY state (only
-  // display:none is gated on :not(:popover-open), and the display:flex
-  // below overrides that) — so the UA resets live HERE, like .spill's,
-  // or the ordinary hover-state strip renders as a bordered Canvas box
-  // centered by margin:auto. inset:auto precedes top/right (shorthand).
-  '.ctl{position:absolute;inset:auto;top:8px;right:8px;margin:0;border:0;padding:0;' + '  background:transparent;overflow:visible;' + '  display:flex;gap:6px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2;' + '  white-space:nowrap}' +
-  // While reframing, the spill owns the top layer and would swallow every
-  // click on the in-frame controls. Promoting .ctl into the top layer
-  // ABOVE the spill (shown after it — later popovers stack higher) keeps
-  // Edit-as-toggle and Replace clickable mid-reframe. _applyView pins it
-  // to the frame's top-right in viewport px (translateX(-100%)
-  // right-aligns against the computed left edge); inset:auto clears the
-  // base rule's top/right so the inline left/top position it alone.
-  '.ctl:popover-open{position:fixed;inset:auto;transform:translateX(-100%)}' + ':host([data-filled][data-editable]:hover) .ctl,:host([data-reframe]) .ctl' + '  {opacity:1;pointer-events:auto}' + '.ctl button{appearance:none;border:0;border-radius:6px;padding:5px 10px;cursor:pointer;' + '  background:rgba(0,0,0,.65);color:#fff;font:11px/1 system-ui,-apple-system,sans-serif;' + '  backdrop-filter:blur(6px)}' + '.ctl button:hover{background:rgba(0,0,0,.8)}' + '.err{position:absolute;left:8px;bottom:8px;right:8px;color:#b3261e;font-size:11px;' + '  background:rgba(255,255,255,.85);padding:4px 6px;border-radius:5px;pointer-events:none}' +
-  // Replacement in flight: after a src swap the browser keeps painting
-  // the PREVIOUS image until the new one decodes, so a Replace would
-  // flash the old photo and then pop. Hide the stale frame (visibility,
-  // not display — _applyView geometry still applies) and spin until the
-  // new image reports in (load/error clears data-swapping).
-  ':host([data-swapping]) .frame img{visibility:hidden}' + '.loading{position:absolute;inset:0;display:none;align-items:center;' + '  justify-content:center;pointer-events:none}' + ':host([data-swapping]) .loading{display:flex}' + '.loading::after{content:"";width:22px;height:22px;border-radius:50%;' + '  border:2px solid rgba(127,127,127,.25);border-top-color:currentColor;' + '  animation:om-slot-spin .7s linear infinite}' + '@keyframes om-slot-spin{to{transform:rotate(360deg)}}' +
-  // Reduced motion: the static two-tone ring still reads as "working".
-  '@media (prefers-reduced-motion:reduce){.loading::after{animation:none}}' + '.credit{position:absolute;left:6px;bottom:6px;max-width:calc(100% - 12px);display:none;' + '  padding:3px 7px;border-radius:5px;background:rgba(0,0,0,.55);color:#fff;' + '  font:10px/1.2 system-ui,-apple-system,sans-serif;text-decoration:none;' + '  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;backdrop-filter:blur(6px)}' +
-  // The credit is a SPAN holding one or two <a>s (Unsplash's prescribed
-  // form links the photographer AND Unsplash) — anchors style inline so
-  // the overlay reads as one line of text.
-  '.credit a{color:inherit;text-decoration:none}' + '.credit a:hover,.credit a:focus-visible{text-decoration:underline}' + ':host([data-filled][data-credit]) .credit{display:block}' +
-  // Exports must ship JUST the image — no hover controls, no credit chip
-  // (the host marks <html data-om-exporting> for the capture window; the
-  // page-level hide script can't reach shadow DOM, this rule can).
-  ':host-context([data-om-exporting]) .ctl,' + ':host-context([data-om-exporting]) .credit{display:none !important}' +
-  // Print must ship just the image too: the hover-gated controls can be
-  // mid-hover when print() fires, and the credit chip is screen chrome —
-  // the same rule the capture window gets, keyed on print media instead
-  // of the host's data-om-exporting mark (the print path sets no mark).
-  '@media print{.ctl,.credit{display:none !important}}' +
-  // No export-window mask rules here on purpose: the export capture
-  // releases the replacement mask by REMOVING data-swapping (the
-  // shadow-root pass in pages/export/shared.ts HIDE_EXPORT_CHROME_SCRIPT)
-  // — attribute removal works in every engine (:host-context is
-  // Chromium-only), is scoped by construction to slots actually
-  // mid-swap, and hides the spinner through the same gate. A masked img
-  // would otherwise be silently dropped from PPTX decks (the capture
-  // walk skips visibility:hidden imgs).
-  // Attribution error tile: REPLACES the photo when an Unsplash src has
-  // no credit attribute — rendering the photo uncredited is the terms
-  // violation, so the photo must not appear at all.
-  // Calm and neutral on purpose (review feedback): the tile informs the
-  // user; the fix instructions are machine-facing (usage docblock, tool
-  // description, and the turn-end scan's bounce copy name the attributes
-  // for the agent).
-  '.attr-error{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;' + '  justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;' + '  background:#f2f1ef;color:#6e6c66;user-select:none;' + '  font:13px/1.45 system-ui,-apple-system,sans-serif}' + '.attr-error svg{opacity:.55}' + '.attr-error .cap{max-width:92%;font-weight:500;letter-spacing:.01em}' + ':host([data-attribution-error]) .attr-error{display:flex}' + ':host([data-attribution-error]) .ring{display:none}';
-  const icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' + 'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>' + '<path d="m21 15-5-5L5 21"/></svg>';
-  const warnIcon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' + 'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + '<path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>' + '<path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
+    // Fill the container by default: slots are usually placed inside a
+    // sized wrapper (a hero frame, a grid cell, an inset:0 layer) and are
+    // expected to take that box — a fixed intrinsic size would render as
+    // a small tile in the corner of a full-bleed wrapper instead.
+    // aspect-ratio is the companion fallback that keeps a bare slot
+    // visible when the parent's height is indefinite: height:100%
+    // resolves to auto there, and the ratio then derives height from
+    // width instead of letting the slot collapse to zero height.
+    // Explicit width/height on the element override all of this.
+    // color:inherit (not a fixed near-black): the placeholder chrome —
+    // empty-state icon/caption (currentColor) and the dashed ring — must
+    // read on dark decks too, and the slide's own text color is the one
+    // color guaranteed to contrast with the slide background. The soft
+    // look comes from opacity on those parts, not from a baked-in alpha.
+    ':host{display:block;position:relative;' +
+    '  font:13px/1.3 system-ui,-apple-system,sans-serif;' +
+    '  width:100%;height:100%;aspect-ratio:3/2}' +
+    '.empty .cap,.empty .sub{opacity:.75}' +
+    '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(127,127,127,.08)}' +
+    // .frame img (clipped) and .spill (unclipped ghost + handles) share the
+    // same left/top/width/height in frame-%, computed by _applyView(), so the
+    // inside-mask crop and the outside-mask spill stay pixel-aligned.
+    '.frame img{position:absolute;max-width:none;transform:translate(-50%,-50%);' +
+    '  -webkit-user-drag:none;user-select:none;touch-action:none}' +
+    // Reframe mode (double-click): the full image spills past the mask. The
+    // spill layer is sized to the IMAGE bounds so its corners are where the
+    // resize handles belong. The ghost <img> inside is translucent; the real
+    // clipped <img> underneath shows the opaque in-mask crop.
+    // popover=manual promotes the spill to the top layer on reframe, so it is
+    // not clipped by any overflow:hidden / clip-path / scroll-container
+    // ancestor (a plain z-index can't escape overflow clipping). UA popover
+    // defaults (inset:0;margin:auto) are reset; _applyView sets viewport px.
+    '.spill{position:fixed;margin:0;inset:auto;border:0;padding:0;background:transparent;' +
+    '  overflow:visible;transform:translate(-50%,-50%);z-index:1;cursor:grab;touch-action:none}' +
+    ':host([data-panning]) .spill{cursor:grabbing}' +
+    '.spill .ghost{position:absolute;inset:0;width:100%;height:100%;opacity:.35;' +
+    '  pointer-events:none;-webkit-user-drag:none;user-select:none;' +
+    '  box-shadow:0 0 0 1px rgba(0,0,0,.2),0 12px 32px rgba(0,0,0,.2)}' +
+    '.spill .handle{position:absolute;width:12px;height:12px;border-radius:50%;' +
+    '  background:#fff;box-shadow:0 0 0 1.5px #c96442,0 1px 3px rgba(0,0,0,.3);' +
+    '  transform:translate(-50%,-50%)}' +
+    '.spill .handle[data-c=nw]{left:0;top:0;cursor:nwse-resize}' +
+    '.spill .handle[data-c=ne]{left:100%;top:0;cursor:nesw-resize}' +
+    '.spill .handle[data-c=sw]{left:0;top:100%;cursor:nesw-resize}' +
+    '.spill .handle[data-c=se]{left:100%;top:100%;cursor:nwse-resize}' +
+    ':host([data-reframe]){z-index:10}' +
+    ':host([data-reframe]) .frame{box-shadow:0 0 0 2px #c96442}' +
+    '.empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;' +
+    '  justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;' +
+    '  cursor:pointer;user-select:none}' +
+    '.empty svg{opacity:.45}' +
+    '.empty .cap{max-width:90%;font-weight:500;letter-spacing:.01em}' +
+    '.empty .sub{font-size:11px}' +
+    '.empty .sub u{text-underline-offset:2px}' +
+    '.empty:hover .sub{opacity:1}' +
+    ':host([data-over]) .frame{outline:2px solid #c96442;outline-offset:-2px;' +
+    '  background:rgba(201,100,66,.10)}' +
+    '.ring{position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;' +
+    '  opacity:.35;transition:border-color .12s,opacity .12s}' +
+    ':host([data-over]) .ring{border-color:#c96442;opacity:1}' +
+    ':host([data-filled]) .ring{display:none}' +
+    // Controls overlay INSIDE the frame, pinned to the top-right corner, so
+    // a full-bleed slot in an overflow:hidden container still shows them
+    // (the old below-mask placement got clipped). Credit sits bottom-left,
+    // so top-right avoids collision. The blurred pill background keeps them
+    // legible over the image.
+    // The UA [popover] base rule styles the element in EVERY state (only
+    // display:none is gated on :not(:popover-open), and the display:flex
+    // below overrides that) — so the UA resets live HERE, like .spill's,
+    // or the ordinary hover-state strip renders as a bordered Canvas box
+    // centered by margin:auto. inset:auto precedes top/right (shorthand).
+    '.ctl{position:absolute;inset:auto;top:8px;right:8px;margin:0;border:0;padding:0;' +
+    '  background:transparent;overflow:visible;' +
+    '  display:flex;gap:6px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2;' +
+    '  white-space:nowrap}' +
+    // While reframing, the spill owns the top layer and would swallow every
+    // click on the in-frame controls. Promoting .ctl into the top layer
+    // ABOVE the spill (shown after it — later popovers stack higher) keeps
+    // Edit-as-toggle and Replace clickable mid-reframe. _applyView pins it
+    // to the frame's top-right in viewport px (translateX(-100%)
+    // right-aligns against the computed left edge); inset:auto clears the
+    // base rule's top/right so the inline left/top position it alone.
+    '.ctl:popover-open{position:fixed;inset:auto;transform:translateX(-100%)}' +
+    ':host([data-filled][data-editable]:hover) .ctl,:host([data-reframe]) .ctl' +
+    '  {opacity:1;pointer-events:auto}' +
+    '.ctl button{appearance:none;border:0;border-radius:6px;padding:5px 10px;cursor:pointer;' +
+    '  background:rgba(0,0,0,.65);color:#fff;font:11px/1 system-ui,-apple-system,sans-serif;' +
+    '  backdrop-filter:blur(6px)}' +
+    '.ctl button:hover{background:rgba(0,0,0,.8)}' +
+    '.err{position:absolute;left:8px;bottom:8px;right:8px;color:#b3261e;font-size:11px;' +
+    '  background:rgba(255,255,255,.85);padding:4px 6px;border-radius:5px;pointer-events:none}' +
+    // Replacement in flight: after a src swap the browser keeps painting
+    // the PREVIOUS image until the new one decodes, so a Replace would
+    // flash the old photo and then pop. Hide the stale frame (visibility,
+    // not display — _applyView geometry still applies) and spin until the
+    // new image reports in (load/error clears data-swapping).
+    ':host([data-swapping]) .frame img{visibility:hidden}' +
+    '.loading{position:absolute;inset:0;display:none;align-items:center;' +
+    '  justify-content:center;pointer-events:none}' +
+    ':host([data-swapping]) .loading{display:flex}' +
+    '.loading::after{content:"";width:22px;height:22px;border-radius:50%;' +
+    '  border:2px solid rgba(127,127,127,.25);border-top-color:currentColor;' +
+    '  animation:om-slot-spin .7s linear infinite}' +
+    '@keyframes om-slot-spin{to{transform:rotate(360deg)}}' +
+    // Reduced motion: the static two-tone ring still reads as "working".
+    '@media (prefers-reduced-motion:reduce){.loading::after{animation:none}}' +
+    '.credit{position:absolute;left:6px;bottom:6px;max-width:calc(100% - 12px);display:none;' +
+    '  padding:3px 7px;border-radius:5px;background:rgba(0,0,0,.55);color:#fff;' +
+    '  font:10px/1.2 system-ui,-apple-system,sans-serif;text-decoration:none;' +
+    '  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;backdrop-filter:blur(6px)}' +
+    // The credit is a SPAN holding one or two <a>s (Unsplash's prescribed
+    // form links the photographer AND Unsplash) — anchors style inline so
+    // the overlay reads as one line of text.
+    '.credit a{color:inherit;text-decoration:none}' +
+    '.credit a:hover,.credit a:focus-visible{text-decoration:underline}' +
+    ':host([data-filled][data-credit]) .credit{display:block}' +
+    // Exports must ship JUST the image — no hover controls, no credit chip
+    // (the host marks <html data-om-exporting> for the capture window; the
+    // page-level hide script can't reach shadow DOM, this rule can).
+    ':host-context([data-om-exporting]) .ctl,' +
+    ':host-context([data-om-exporting]) .credit{display:none !important}' +
+    // Print must ship just the image too: the hover-gated controls can be
+    // mid-hover when print() fires, and the credit chip is screen chrome —
+    // the same rule the capture window gets, keyed on print media instead
+    // of the host's data-om-exporting mark (the print path sets no mark).
+    '@media print{.ctl,.credit{display:none !important}}' +
+    // No export-window mask rules here on purpose: the export capture
+    // releases the replacement mask by REMOVING data-swapping (the
+    // shadow-root pass in pages/export/shared.ts HIDE_EXPORT_CHROME_SCRIPT)
+    // — attribute removal works in every engine (:host-context is
+    // Chromium-only), is scoped by construction to slots actually
+    // mid-swap, and hides the spinner through the same gate. A masked img
+    // would otherwise be silently dropped from PPTX decks (the capture
+    // walk skips visibility:hidden imgs).
+    // Attribution error tile: REPLACES the photo when an Unsplash src has
+    // no credit attribute — rendering the photo uncredited is the terms
+    // violation, so the photo must not appear at all.
+    // Calm and neutral on purpose (review feedback): the tile informs the
+    // user; the fix instructions are machine-facing (usage docblock, tool
+    // description, and the turn-end scan's bounce copy name the attributes
+    // for the agent).
+    '.attr-error{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;' +
+    '  justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;' +
+    '  background:#f2f1ef;color:#6e6c66;user-select:none;' +
+    '  font:13px/1.45 system-ui,-apple-system,sans-serif}' +
+    '.attr-error svg{opacity:.55}' +
+    '.attr-error .cap{max-width:92%;font-weight:500;letter-spacing:.01em}' +
+    ':host([data-attribution-error]) .attr-error{display:flex}' +
+    ':host([data-attribution-error]) .ring{display:none}';
+
+  const icon =
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+    '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>' +
+    '<path d="m21 15-5-5L5 21"/></svg>';
+
+  const warnIcon =
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>' +
+    '<path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
+
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
       return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href'];
@@ -685,7 +475,9 @@ try { (() => {
           // adopted or rewritten. (Entries without .u never match.)
           const prev = getSlot(toId);
           const cur = getSlot(fromId);
-          if (!(prev && cur && prev.u && prev.u === cur.u && prev.s === cur.s && prev.x === cur.x && prev.y === cur.y && (typeof isFree !== 'function' || isFree(toId)))) continue;
+          if (!(prev && cur && prev.u && prev.u === cur.u &&
+                prev.s === cur.s && prev.x === cur.x && prev.y === cur.y &&
+                (typeof isFree !== 'function' || isFree(toId)))) continue;
           return toId;
         }
         if (typeof isFree === 'function' && !isFree(toId)) continue;
@@ -695,29 +487,46 @@ try { (() => {
       }
       return null;
     }
+
     constructor() {
       super();
       // clonable: rail thumbnails deep-clone slides and carry this shadow
       // along; reuse an already-cloned root so upgrade-after-clone works.
       // (Deliberately NOT serializable — a getHTML consumer would embed
       // multi-MB sidecar data-URLs into serialized page HTML.)
-      const root = this.shadowRoot || this.attachShadow({
-        mode: 'open',
-        clonable: true
-      });
+      const root = this.shadowRoot ||
+        this.attachShadow({ mode: 'open', clonable: true });
       // .spill and .ctl sit OUTSIDE .frame so overflow:hidden + border-radius
       // on the frame (circle, pill, rounded) can't clip them.
-      root.innerHTML = '<style>' + stylesheet + '</style>' + '<div class="frame" part="frame">' + '  <img part="image" alt="" draggable="false" style="display:none">' + '  <div class="empty" part="empty">' + icon + '    <div class="cap"></div>' + '    <div class="sub">or <u>browse files</u></div></div>' + '  <div class="attr-error" part="attribution-error">' + warnIcon + '    <div class="cap">This photo needs attribution</div></div>' + '  <div class="loading" part="loading"></div>' + '  <div class="ring" part="ring"></div>' + '</div>' +
-      // Outside .frame, like .spill/.ctl — the frame's overflow:hidden +
-      // border-radius/clip-path would cut the credit off on circle/pill/mask.
-      // A SPAN, not an <a>: the prescribed Unsplash credit holds two links
-      // (photographer + Unsplash), built per-render in _render().
-      '<span class="credit" part="credit"></span>' + '<div class="spill" popover="manual" data-dc-edit-transparent>' + '  <img class="ghost" alt="" draggable="false">' + '  <div class="handle" data-c="nw"></div><div class="handle" data-c="ne"></div>' + '  <div class="handle" data-c="sw"></div><div class="handle" data-c="se"></div>' + '</div>' +
-      // data-dc-edit-transparent: the DC editor's edit-mode picker lets
-      // clicks through for chrome marked with it (EDIT_TRANSPARENT_SEL)
-      // — without it, Replace/Edit clicks in Edit mode are swallowed by
-      // element selection and the controls look dead.
-      '<div class="ctl" popover="manual" data-dc-edit-transparent><button data-act="replace" title="Replace image">Replace</button>' + '  <button data-act="edit" title="Reframe image">Edit</button></div>' + '<input type="file" accept="' + ACCEPT.join(',') + '" hidden>';
+      root.innerHTML =
+        '<style>' + stylesheet + '</style>' +
+        '<div class="frame" part="frame">' +
+        '  <img part="image" alt="" draggable="false" style="display:none">' +
+        '  <div class="empty" part="empty">' + icon +
+        '    <div class="cap"></div>' +
+        '    <div class="sub">or <u>browse files</u></div></div>' +
+        '  <div class="attr-error" part="attribution-error">' + warnIcon +
+        '    <div class="cap">This photo needs attribution</div></div>' +
+        '  <div class="loading" part="loading"></div>' +
+        '  <div class="ring" part="ring"></div>' +
+        '</div>' +
+        // Outside .frame, like .spill/.ctl — the frame's overflow:hidden +
+        // border-radius/clip-path would cut the credit off on circle/pill/mask.
+        // A SPAN, not an <a>: the prescribed Unsplash credit holds two links
+        // (photographer + Unsplash), built per-render in _render().
+        '<span class="credit" part="credit"></span>' +
+        '<div class="spill" popover="manual" data-dc-edit-transparent>' +
+        '  <img class="ghost" alt="" draggable="false">' +
+        '  <div class="handle" data-c="nw"></div><div class="handle" data-c="ne"></div>' +
+        '  <div class="handle" data-c="sw"></div><div class="handle" data-c="se"></div>' +
+        '</div>' +
+        // data-dc-edit-transparent: the DC editor's edit-mode picker lets
+        // clicks through for chrome marked with it (EDIT_TRANSPARENT_SEL)
+        // — without it, Replace/Edit clicks in Edit mode are swallowed by
+        // element selection and the controls look dead.
+        '<div class="ctl" popover="manual" data-dc-edit-transparent><button data-act="replace" title="Replace image">Replace</button>' +
+        '  <button data-act="edit" title="Reframe image">Edit</button></div>' +
+        '<input type="file" accept="' + ACCEPT.join(',') + '" hidden>';
       this._frame = root.querySelector('.frame');
       this._ring = root.querySelector('.ring');
       this._img = root.querySelector('.frame img');
@@ -729,8 +538,8 @@ try { (() => {
       this._credit = root.querySelector('.credit');
       this._attrError = root.querySelector('.attr-error');
       // Credit clicks open the link, not browse/reframe.
-      this._credit.addEventListener('click', e => e.stopPropagation());
-      this._credit.addEventListener('dblclick', e => e.stopPropagation());
+      this._credit.addEventListener('click', (e) => e.stopPropagation());
+      this._credit.addEventListener('dblclick', (e) => e.stopPropagation());
       this._ghost = root.querySelector('.ghost');
       this._err = null;
       this._input = root.querySelector('input');
@@ -755,16 +564,12 @@ try { (() => {
       // showing image must make the follow-up render a replacement (spinner),
       // not a first fill (blank frame).
       this._hidShowing = false;
-      this._view = {
-        s: 1,
-        x: 0,
-        y: 0
-      };
+      this._view = { s: 1, x: 0, y: 0 };
       this._subFn = () => this._render();
       // Shadow-DOM listeners live with the shadow DOM — bound once here so
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
       this._empty.addEventListener('click', () => this._input.click());
-      root.addEventListener('click', e => {
+      root.addEventListener('click', (e) => {
         const act = e.target && e.target.getAttribute && e.target.getAttribute('data-act');
         if (!act) return;
         // The hidden controls are opacity-0 but still tabbable — without
@@ -775,16 +580,13 @@ try { (() => {
           this._exitReframe(true);
           // Host-owned picker (Unsplash modal; it also offers local import).
           this.dispatchEvent(new CustomEvent('image-slot:pick', {
-            bubbles: true,
-            composed: true,
-            detail: {
-              id: this.id || null
-            }
+            bubbles: true, composed: true, detail: { id: this.id || null }
           }));
         }
         if (act === 'edit') {
           if (!this._reframes()) return;
-          if (this.hasAttribute('data-reframe')) this._exitReframe(true);else this._enterReframe();
+          if (this.hasAttribute('data-reframe')) this._exitReframe(true);
+          else this._enterReframe();
         }
       });
       this._input.addEventListener('change', () => {
@@ -809,47 +611,44 @@ try { (() => {
       });
       // Gated only on editable — any filled slot can be repositioned/scaled,
       // regardless of fit. Share links (no writeFile) stay static.
-      this.addEventListener('dblclick', e => {
+      this.addEventListener('dblclick', (e) => {
         if (!this.hasAttribute('data-editable') || !this._reframes()) return;
         e.preventDefault();
-        if (this.hasAttribute('data-reframe')) this._exitReframe(true);else this._enterReframe();
+        if (this.hasAttribute('data-reframe')) this._exitReframe(true);
+        else this._enterReframe();
       });
       // Pan + resize both originate on the spill layer. A handle pointerdown
       // drives an aspect-locked resize anchored at the opposite corner; any
       // other pointerdown on the spill pans. Offsets are frame-% so a
       // reframed slot survives responsive resize / PPTX export.
-      this._spill.addEventListener('pointerdown', e => {
+      this._spill.addEventListener('pointerdown', (e) => {
         if (e.button !== 0 || !this.hasAttribute('data-reframe')) return;
         e.preventDefault();
         e.stopPropagation();
         this._spill.setPointerCapture(e.pointerId);
         const rect = this.getBoundingClientRect();
-        const fw = rect.width || 1,
-          fh = rect.height || 1;
+        const fw = rect.width || 1, fh = rect.height || 1;
         const corner = e.target.getAttribute && e.target.getAttribute('data-c');
         let move;
         if (corner) {
           // Resize about the OPPOSITE corner. Viewport-px throughout (rect
           // fw/fh, not clientWidth) so the math survives a transform:scale()
           // ancestor — deck_stage renders slides scaled-to-fit.
-          const iw = this._img.naturalWidth || 1,
-            ih = this._img.naturalHeight || 1;
+          const iw = this._img.naturalWidth || 1, ih = this._img.naturalHeight || 1;
           const contain = (this.getAttribute('fit') || 'cover').toLowerCase() === 'contain';
           const base = contain ? Math.min(fw / iw, fh / ih) : Math.max(fw / iw, fh / ih);
           const sx = corner.includes('e') ? 1 : -1;
           const sy = corner.includes('s') ? 1 : -1;
           const s0 = this._view.s;
-          const w0 = iw * base * s0,
-            h0 = ih * base * s0;
+          const w0 = iw * base * s0, h0 = ih * base * s0;
           const cx0 = (50 + this._view.x) / 100 * fw;
           const cy0 = (50 + this._view.y) / 100 * fh;
-          const ox = cx0 - sx * w0 / 2,
-            oy = cy0 - sy * h0 / 2;
+          const ox = cx0 - sx * w0 / 2, oy = cy0 - sy * h0 / 2;
           const diag0 = Math.hypot(w0, h0);
-          const ux = sx * w0 / diag0,
-            uy = sy * h0 / diag0;
-          move = ev => {
-            const proj = (ev.clientX - rect.left - ox) * ux + (ev.clientY - rect.top - oy) * uy;
+          const ux = sx * w0 / diag0, uy = sy * h0 / diag0;
+          move = (ev) => {
+            const proj = (ev.clientX - rect.left - ox) * ux +
+                         (ev.clientY - rect.top - oy) * uy;
             const s = clampS(s0 * proj / diag0);
             const d = diag0 * s / s0;
             this._view.s = s;
@@ -860,13 +659,8 @@ try { (() => {
           };
         } else {
           this.setAttribute('data-panning', '');
-          const start = {
-            px: e.clientX,
-            py: e.clientY,
-            x: this._view.x,
-            y: this._view.y
-          };
-          move = ev => {
+          const start = { px: e.clientX, py: e.clientY, x: this._view.x, y: this._view.y };
+          move = (ev) => {
             this._view.x = start.x + (ev.clientX - start.px) / fw * 100;
             this._view.y = start.y + (ev.clientY - start.py) / fh * 100;
             this._clampView();
@@ -874,9 +668,7 @@ try { (() => {
           };
         }
         const up = () => {
-          try {
-            this._spill.releasePointerCapture(e.pointerId);
-          } catch {}
+          try { this._spill.releasePointerCapture(e.pointerId); } catch {}
           this._spill.removeEventListener('pointermove', move);
           this._spill.removeEventListener('pointerup', up);
           this._spill.removeEventListener('pointercancel', up);
@@ -892,7 +684,7 @@ try { (() => {
       });
       // Wheel zoom stays available inside reframe mode as a trackpad nicety —
       // zooms toward the cursor (offset' = cursor·(1-k) + offset·k).
-      this.addEventListener('wheel', e => {
+      this.addEventListener('wheel', (e) => {
         if (!this.hasAttribute('data-reframe')) return;
         e.preventDefault();
         const r = this.getBoundingClientRect();
@@ -907,10 +699,9 @@ try { (() => {
         this._view.y = cy * (1 - k) + this._view.y * k;
         this._clampView();
         this._applyView();
-      }, {
-        passive: false
-      });
+      }, { passive: false });
     }
+
     connectedCallback() {
       // Warn once per page — an id-less slot works for the session but
       // cannot persist, and two id-less slots would share nothing.
@@ -937,6 +728,7 @@ try { (() => {
       load();
       this._render();
     }
+
     disconnectedCallback() {
       subs.delete(this._subFn);
       this.removeEventListener('pointerenter', this._subFn);
@@ -944,16 +736,14 @@ try { (() => {
       this.removeEventListener('dragover', this);
       this.removeEventListener('dragleave', this);
       this.removeEventListener('drop', this);
-      if (this._ro) {
-        this._ro.disconnect();
-        this._ro = null;
-      }
+      if (this._ro) { this._ro.disconnect(); this._ro = null; }
       // commit=false: a disconnect is not a user intent — committing here
       // would persist whatever half-finished drag a React remount or DOM
       // splice happened to interrupt. Deliberate exits commit on their own
       // paths (Escape/click-out/toggle), and unloads commit via pagehide.
       this._exitReframe(false);
     }
+
     _enterReframe() {
       if (this.hasAttribute('data-reframe')) return;
       this.setAttribute('data-reframe', '');
@@ -964,26 +754,17 @@ try { (() => {
       // document, so the crop survives even though the mode dies with the
       // DOM. Held on the instance so _exitReframe detaches exactly what
       // was attached.
-      this._pagehide = () => {
-        this._exitReframe(true);
-        flushNow();
-      };
+      this._pagehide = () => { this._exitReframe(true); flushNow(); };
       window.addEventListener('pagehide', this._pagehide);
       // Promote spill to the top layer, then keep it pinned over the frame:
       // scroll/resize cover the common cases, and a per-frame rect check
       // catches layout shifts that fire neither (an image above finishing
       // load, streamed DOM pushing the slot down, an ancestor transform
       // change) so the overlay can't detach from the frame.
-      try {
-        this._spill.showPopover();
-      } catch {}
+      try { this._spill.showPopover(); } catch {}
       // After the spill, so the controls stack above it in the top layer.
-      try {
-        this._ctl.showPopover();
-      } catch {}
-      this._reposition = () => {
-        if (this.hasAttribute('data-reframe')) this._applyView();
-      };
+      try { this._ctl.showPopover(); } catch {}
+      this._reposition = () => { if (this.hasAttribute('data-reframe')) this._applyView(); };
       window.addEventListener('scroll', this._reposition, true);
       window.addEventListener('resize', this._reposition);
       this._lastRect = '';
@@ -991,10 +772,7 @@ try { (() => {
         if (!this.hasAttribute('data-reframe')) return;
         const r = this.getBoundingClientRect();
         const key = r.left + ',' + r.top + ',' + r.width + ',' + r.height;
-        if (key !== this._lastRect) {
-          this._lastRect = key;
-          this._applyView();
-        }
+        if (key !== this._lastRect) { this._lastRect = key; this._applyView(); }
         this._watchId = requestAnimationFrame(this._watch);
       };
       this._watchId = requestAnimationFrame(this._watch);
@@ -1003,16 +781,15 @@ try { (() => {
       // in-image drags don't reach this) and on Escape. Listeners are held
       // on the instance so _exitReframe / disconnectedCallback can detach
       // exactly what was attached.
-      this._outside = e => {
+      this._outside = (e) => {
         if (e.composedPath && e.composedPath().includes(this)) return;
         this._exitReframe(true);
       };
-      this._esc = e => {
-        if (e.key === 'Escape') this._exitReframe(true);
-      };
+      this._esc = (e) => { if (e.key === 'Escape') this._exitReframe(true); };
       document.addEventListener('pointerdown', this._outside, true);
       document.addEventListener('keydown', this._esc, true);
     }
+
     _exitReframe(commit) {
       if (!this.hasAttribute('data-reframe')) return;
       if (this._dragUp) this._dragUp();
@@ -1026,22 +803,14 @@ try { (() => {
         window.removeEventListener('resize', this._reposition);
         this._reposition = null;
       }
-      if (this._watchId) {
-        cancelAnimationFrame(this._watchId);
-        this._watchId = 0;
-      }
+      if (this._watchId) { cancelAnimationFrame(this._watchId); this._watchId = 0; }
       if (this._pagehide) {
         window.removeEventListener('pagehide', this._pagehide);
         this._pagehide = null;
       }
-      try {
-        this._spill.hidePopover();
-      } catch {}
-      try {
-        this._ctl.hidePopover();
-      } catch {}
-      this._ctl.style.left = '';
-      this._ctl.style.top = '';
+      try { this._spill.hidePopover(); } catch {}
+      try { this._ctl.hidePopover(); } catch {}
+      this._ctl.style.left = ''; this._ctl.style.top = '';
       if (commit) this._commitView();
       this._signalReframe(false);
     }
@@ -1056,20 +825,13 @@ try { (() => {
     _signalReframe(active) {
       const target = this.isConnected ? this : document;
       target.dispatchEvent(new CustomEvent('image-slot:reframe', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          active: active,
-          id: this.id || null
-        }
+        bubbles: true, composed: true,
+        detail: { active: active, id: this.id || null }
       }));
     }
 
     // Public: host's "Import from computer" calls this to run local browse.
-    openFilePicker() {
-      this._exitReframe(true);
-      this._input.click();
-    }
+    openFilePicker() { this._exitReframe(true); this._input.click(); }
 
     // A src write is a newer intent for this slot's content — the host
     // pick path (setImageSlotImage) or an agent edit — so it must win
@@ -1103,10 +865,7 @@ try { (() => {
       } else if (e.type === 'dragleave') {
         // dragenter/leave fire for every descendant crossing — count depth
         // so hovering the icon inside the empty state doesn't flicker.
-        if (--this._depth <= 0) {
-          this._depth = 0;
-          this.removeAttribute('data-over');
-        }
+        if (--this._depth <= 0) { this._depth = 0; this.removeAttribute('data-over'); }
       } else if (e.type === 'drop') {
         e.preventDefault();
         e.stopPropagation();
@@ -1116,6 +875,7 @@ try { (() => {
         if (f) this._ingest(f);
       }
     }
+
     async _ingest(file) {
       this._setError(null);
       if (!file || ACCEPT.indexOf(file.type) < 0) {
@@ -1149,19 +909,11 @@ try { (() => {
         // pending encode, so a byte-identical re-upload (same data URL, no
         // load event coming) still clears the mask via the complete branch.
         this._swapGen = 0;
-        const val = {
-          u: url,
-          s: 1,
-          x: 0,
-          y: 0
-        };
+        const val = { u: url, s: 1, x: 0, y: 0 };
         setSlot(this.id || '', val);
         // Keep a session-local copy for id-less slots so the drop still
         // shows, even though it cannot persist.
-        if (!this.id) {
-          this._local = val;
-          this._render();
-        }
+        if (!this.id) { this._local = val; this._render(); }
       } catch (err) {
         if (gen !== this._gen) return;
         this._swapGen = 0;
@@ -1173,23 +925,15 @@ try { (() => {
         console.warn('<image-slot> ingest failed:', err);
       }
     }
+
     _setError(msg) {
-      if (this._err) {
-        this._err.remove();
-        this._err = null;
-      }
+      if (this._err) { this._err.remove(); this._err = null; }
       if (!msg) return;
       const d = document.createElement('div');
-      d.className = 'err';
-      d.textContent = msg;
+      d.className = 'err'; d.textContent = msg;
       this.shadowRoot.appendChild(d);
       this._err = d;
-      setTimeout(() => {
-        if (this._err === d) {
-          d.remove();
-          this._err = null;
-        }
-      }, 3000);
+      setTimeout(() => { if (this._err === d) { d.remove(); this._err = null; } }, 3000);
     }
 
     // Reframing (pan/resize) is available on any filled slot — the user can
@@ -1213,7 +957,11 @@ try { (() => {
     // Every release path funnels through here EXCEPT _render's empty
     // branch (the img is being cleared — nothing will ever settle).
     _releaseMask(settled) {
-      if (!this._swapGen && !this._loadPending && (settled || this._img.complete)) {
+      if (
+        !this._swapGen &&
+        !this._loadPending &&
+        (settled || this._img.complete)
+      ) {
         this.removeAttribute('data-swapping');
       }
     }
@@ -1227,21 +975,16 @@ try { (() => {
     // clamping against a degenerate 1×1 frame would silently pull the stored
     // pan toward zero.
     _geom() {
-      const iw = this._img.naturalWidth,
-        ih = this._img.naturalHeight;
-      const fw = this.clientWidth,
-        fh = this.clientHeight;
+      const iw = this._img.naturalWidth, ih = this._img.naturalHeight;
+      const fw = this.clientWidth, fh = this.clientHeight;
       if (!iw || !ih || !fw || !fh) return null;
       const contain = (this.getAttribute('fit') || 'cover').toLowerCase() === 'contain';
-      const base = contain ? Math.min(fw / iw, fh / ih) : Math.max(fw / iw, fh / ih);
-      return {
-        iw,
-        ih,
-        fw,
-        fh,
-        base
-      };
+      const base = contain
+        ? Math.min(fw / iw, fh / ih)
+        : Math.max(fw / iw, fh / ih);
+      return { iw, ih, fw, fh, base };
     }
+
     _clampView() {
       // Pan range on each axis is half the overflow past the frame edge.
       const g = this._geom();
@@ -1251,6 +994,7 @@ try { (() => {
       this._view.x = Math.max(-mx, Math.min(mx, this._view.x));
       this._view.y = Math.max(-my, Math.min(my, this._view.y));
     }
+
     _applyView() {
       const g = this._geom();
       // Top-layer controls: pin to the frame's top-right in viewport px
@@ -1265,13 +1009,11 @@ try { (() => {
       // there (unknown pseudo-class), hence the try/catch.
       if (this.hasAttribute('data-reframe')) {
         let onTop = false;
-        try {
-          onTop = this._ctl.matches(':popover-open');
-        } catch {}
+        try { onTop = this._ctl.matches(':popover-open'); } catch {}
         if (onTop) {
           const r = this.getBoundingClientRect();
-          this._ctl.style.left = r.right - 8 + 'px';
-          this._ctl.style.top = r.top + 8 + 'px';
+          this._ctl.style.left = (r.right - 8) + 'px';
+          this._ctl.style.top = (r.top + 8) + 'px';
         }
       }
       if (!g) {
@@ -1290,14 +1032,12 @@ try { (() => {
       // a responsive resize keeps the same crop. The spill layer mirrors the
       // same box so its corners = image corners.
       const k = g.base * this._view.s;
-      const w = g.iw * k / g.fw * 100 + '%';
-      const h = g.ih * k / g.fh * 100 + '%';
-      const l = 50 + this._view.x + '%';
-      const t = 50 + this._view.y + '%';
-      this._img.style.width = w;
-      this._img.style.height = h;
-      this._img.style.left = l;
-      this._img.style.top = t;
+      const w = (g.iw * k / g.fw * 100) + '%';
+      const h = (g.ih * k / g.fh * 100) + '%';
+      const l = (50 + this._view.x) + '%';
+      const t = (50 + this._view.y) + '%';
+      this._img.style.width = w; this._img.style.height = h;
+      this._img.style.left = l; this._img.style.top = t;
       this._img.style.objectFit = '';
       if (this.hasAttribute('data-reframe')) {
         // Top-layer spill: position in viewport px over the frame. The top
@@ -1309,25 +1049,22 @@ try { (() => {
         const r = this.getBoundingClientRect();
         const sx = g.fw ? r.width / g.fw : 1;
         const sy = g.fh ? r.height / g.fh : 1;
-        this._spill.style.width = g.iw * k * sx + 'px';
-        this._spill.style.height = g.ih * k * sy + 'px';
-        this._spill.style.left = r.left + (50 + this._view.x) / 100 * r.width + 'px';
-        this._spill.style.top = r.top + (50 + this._view.y) / 100 * r.height + 'px';
+        this._spill.style.width = (g.iw * k * sx) + 'px';
+        this._spill.style.height = (g.ih * k * sy) + 'px';
+        this._spill.style.left = (r.left + (50 + this._view.x) / 100 * r.width) + 'px';
+        this._spill.style.top = (r.top + (50 + this._view.y) / 100 * r.height) + 'px';
       }
     }
+
     _commitView() {
-      const v = {
-        s: this._view.s,
-        x: this._view.x,
-        y: this._view.y
-      };
+      const v = { s: this._view.s, x: this._view.x, y: this._view.y };
       if (this._userUrl) v.u = this._userUrl;
       // Framing-only (no u) persists too so an author-src slot remembers its
       // crop; clearing the sidecar still falls through to src=.
-      if (this.id) setSlot(this.id, v);else {
-        this._local = v;
-      }
+      if (this.id) setSlot(this.id, v);
+      else { this._local = v; }
     }
+
     _render() {
       // Shape / mask. Presets use border-radius so the dashed ring can
       // follow the rounded outline; clip-path is only applied for an
@@ -1336,7 +1073,9 @@ try { (() => {
       const mask = this.getAttribute('mask');
       const shape = (this.getAttribute('shape') || 'rounded').toLowerCase();
       let radius = '';
-      if (shape === 'circle') radius = '50%';else if (shape === 'pill') radius = '9999px';else if (shape === 'rounded') {
+      if (shape === 'circle') radius = '50%';
+      else if (shape === 'pill') radius = '9999px';
+      else if (shape === 'rounded') {
         const n = parseFloat(this.getAttribute('radius'));
         radius = (Number.isFinite(n) ? n : 12) + 'px';
       }
@@ -1357,14 +1096,14 @@ try { (() => {
       let stored = this.id ? getSlot(this.id) : this._local;
       if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
       const srcAttr = this.getAttribute('src') || '';
-      this._userUrl = stored && stored.u || null;
+      this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;
       // Don't clobber an in-flight reframe with a store-triggered re-render.
       if (!this.hasAttribute('data-reframe')) {
         this._view = {
           s: stored && Number.isFinite(stored.s) ? clampS(stored.s) : 1,
           x: stored && Number.isFinite(stored.x) ? stored.x : 0,
-          y: stored && Number.isFinite(stored.y) ? stored.y : 0
+          y: stored && Number.isFinite(stored.y) ? stored.y : 0,
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';
@@ -1379,7 +1118,9 @@ try { (() => {
       // error tile AND render an empty credit box (no text, no links),
       // exactly the unattributed state this gate exists to prevent.
       const credit = (this.getAttribute('credit') || '').trim();
-      const attrError = !!(!credit && !this._userUrl && srcAttr && isUnsplashHost(srcAttr));
+      const attrError = !!(
+        !credit && !this._userUrl && srcAttr && isUnsplashHost(srcAttr)
+      );
       this.toggleAttribute('data-attribution-error', attrError);
       if (url && !attrError) {
         const prev = this._img.getAttribute('src');
@@ -1463,7 +1204,9 @@ try { (() => {
         const m = /^Photo by (.+) on Unsplash$/.exec(credit);
         if (m) {
           this._credit.appendChild(document.createTextNode('Photo by '));
-          this._credit.appendChild(href ? mkLink(m[1], href) : document.createTextNode(m[1]));
+          this._credit.appendChild(
+            href ? mkLink(m[1], href) : document.createTextNode(m[1])
+          );
           this._credit.appendChild(document.createTextNode(' on '));
           this._credit.appendChild(mkLink('Unsplash', UNSPLASH_HOMEPAGE_HREF));
         } else if (href) {
@@ -1475,18 +1218,8 @@ try { (() => {
       this.toggleAttribute('data-credit', showCredit);
     }
   }
+
   if (!customElements.get('image-slot')) {
     customElements.define('image-slot', ImageSlot);
   }
-})();
-})(); } catch (e) { __ds_ns.__errors.push({ path: "image-slot.js", error: String((e && e.message) || e) }); }
-
-__ds_ns.Badge = __ds_scope.Badge;
-
-__ds_ns.Button = __ds_scope.Button;
-
-__ds_ns.FaqItem = __ds_scope.FaqItem;
-
-__ds_ns.PropertyCard = __ds_scope.PropertyCard;
-
 })();

@@ -20,10 +20,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dict }) {
   }, [])
 
   const links = [
+    { href: `${base}#series`, label: dict.nav.series },
+    { href: `${base}#journey`, label: dict.nav.location },
+    { href: `${base}#faq`, label: dict.nav.contact },
     { href: `${base}/houses`, label: dict.nav.houses },
-    { href: `${base}#economics`, label: dict.nav.economics },
-    { href: `${base}#location`, label: dict.nav.location },
-    { href: `${base}#masterplan`, label: dict.nav.masterplan },
     { href: `${base}/blog`, label: dict.nav.blog },
   ]
 
@@ -49,7 +49,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dict }) {
         <div className="flex items-center gap-3">
           <LangSwitcher locale={locale} />
           <Link href={`${base}#contact`} className="hidden sm:inline-flex btn btn-ember text-sm px-4 py-2.5">
-            {dict.nav.invest}
+            {dict.nav.book}
           </Link>
           <button
             className="lg:hidden p-2 -mr-2 text-fg"
@@ -78,7 +78,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dict }) {
               </Link>
             ))}
             <Link href={`${base}#contact`} onClick={() => setOpen(false)} className="btn btn-ember mt-3">
-              {dict.nav.invest}
+              {dict.nav.book}
             </Link>
           </nav>
         </div>

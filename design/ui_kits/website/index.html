@@ -10,6 +10,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
+<script src="../../image-slot.js"></script>
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
@@ -34,6 +35,7 @@ function Nav(){
         <div style={{display:'flex',gap:32,fontSize:14}}>
           <a href="#tiers" style={{color:'var(--color-text)',textDecoration:'none'}}>Будинки</a>
           <a href="#location" style={{color:'var(--color-text)',textDecoration:'none'}}>Локація</a>
+          <a href="#green-love" style={{color:'var(--color-text)',textDecoration:'none'}}>Green Love</a>
           <a href="#faq" style={{color:'var(--color-text)',textDecoration:'none'}}>Питання</a>
         </div>
         <Button variant="primary" href="#tiers">Забронювати</Button>
@@ -79,9 +81,10 @@ function Values(){
 }
 
 const TIERS = [
-  {image:P('compact-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Compact',description:"Окрема спальня, кухня-вітальня з місцем для сну дітей і тераса з видом на долину.",amenities:['Тераса','Барбекю','Панорамне скління']},
-  {image:P('comfort-exterior.png'),tier:'Comfort',size:'45–55 м²',title:'Comfort',description:"Більша тераса, камін і чан під відкритим небом — для тих, хто цінує підвищений комфорт.",amenities:['Чан','Камін','Панорамне скління']},
-  {image:P('vip-exterior.png'),tier:'VIP Villa',size:'70–90 м²',title:'VIP Villa',description:"Простора вілла з приватною сауною, окремою терасою для барбекю і найкращою точкою на ділянці.",amenities:['Сауна','Чан','Дві спальні']},
+  {image:P('comfort-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Адам і Єва',description:"Біла основа, червоне узголів'я, дзеркальні акценти і чан на терасі.",amenities:['Тераса','Барбекю','Панорамне скління']},
+  {image:P('comfort-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Пікассо',description:"Арт-інтер'єр, музика і львівські спогади.",amenities:['Тераса','Барбекю','Панорамне скління']},
+  {image:P('comfort-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Max Royal',description:"Темне дерево, камінь, світлий текстиль і приглушена зелень.",amenities:['Тераса','Барбекю','Панорамне скління']},
+  {image:P('comfort-exterior.png'),tier:'Compact',size:'35–45 м²',title:'Ромео і Джульєтта',description:"Теплий камінь, аркові мотиви, балдахін і бордовий оксамит.",amenities:['Тераса','Барбекю','Панорамне скління']},
 ];
 function Tiers(){
   return (
@@ -95,25 +98,40 @@ function Tiers(){
   );
 }
 
-const GALLERY = [
-  {image:P('compact-interior.png'),label:'Compact'},
-  {image:P('comfort-interior.png'),label:'Comfort'},
-  {image:P('vip-interior.png'),label:'VIP Villa'},
+const GREEN_LOVE = [
+  {slot:'green-love-adam-eve',no:'01',name:'Адам і Єва',tagline:"Біла основа · червоне узголів'я · дзеркальні акценти",image:P('green-love-adam-eve.png')},
+  {slot:'green-love-picasso',no:'02',name:'Пікассо',tagline:'Мистецтво · музика · львівські спогади',image:P('green-love-picasso.png')},
+  {slot:'green-love-max-royal',no:'03',name:'Max Royal',tagline:'Темне дерево · фактурний камінь · світлий текстиль · приглушена зелень',image:P('green-love-max-royal.png')},
+  {slot:'green-love-romeo-juliet',no:'04',name:'Ромео і Джульєтта',tagline:"Теплий камінь · аркові мотиви · легкий балдахін · бордовий оксамит",image:P('green-love-romeo-juliet.png')},
 ];
-function Gallery(){
+function GreenLoveSeries(){
   return (
-    <div style={{padding:'var(--space-2xl) 0',background:'var(--color-surface)',borderTop:'1px solid var(--color-border)',borderBottom:'1px solid var(--color-border)'}}>
-      <div className="wrap">
-        <div className="eyebrow">Інтер'єр</div>
-        <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 var(--space-lg)',letterSpacing:'var(--tracking-tight)',maxWidth:640}}>Тепло серед дерева і каменю</h2>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:2}}>
-          {GALLERY.map((g,i)=>(
-            <div key={i} style={{position:'relative',aspectRatio:'4/3',overflow:'hidden'}}>
-              <img src={g.image} alt={g.label} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
-              <div style={{position:'absolute',bottom:12,left:12}}><Badge tone="outline">{g.label}</Badge></div>
+    <div id="green-love" className="wrap" style={{padding:'var(--space-2xl) 0'}}>
+      <div className="eyebrow">Green Love Travel · інтер'єр</div>
+      <h2 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h2)',margin:'12px 0 8px',letterSpacing:'var(--tracking-tight)',maxWidth:640}}>Чотири теми одного Compact</h2>
+      <p style={{fontSize:'var(--text-body)',color:'var(--color-text-muted)',lineHeight:'var(--leading-body)',margin:'0 0 var(--space-lg)',maxWidth:640}}>Однакова планувальна основа Compact, своя тема інтер'єру і своя ціна за ніч у кожному будинку. Лише для двох дорослих гостей, без дітей.</p>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,minmax(0,1fr))',gap:'var(--space-md)'}}>
+        {GREEN_LOVE.map((h,i)=>(
+          <div key={i} style={{background:'var(--color-surface)',border:'1px solid var(--color-border)',borderRadius:'var(--radius-md)',overflow:'hidden',display:'flex',flexDirection:'column'}}>
+            <div style={{position:'relative',display:'grid',gridTemplateColumns:'1fr 1fr',gap:2}}>
+              <div style={{position:'relative',aspectRatio:'1/1',overflow:'hidden'}}>
+                <img src={P('comfort-exterior.png')} alt={`${h.name} · екстер'єр`} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+              </div>
+              <div style={{position:'relative',aspectRatio:'1/1',overflow:'hidden'}}>
+                <image-slot id={h.slot} shape="rect" src={h.image} placeholder={`Інтер'єр · ${h.name}`}></image-slot>
+              </div>
+              <div style={{position:'absolute',top:16,left:16,zIndex:2,pointerEvents:'none'}}><Badge tone="wood">{`Compact №${h.no}`}</Badge></div>
             </div>
-          ))}
-        </div>
+            <div style={{padding:'var(--space-md)',display:'flex',flexDirection:'column',gap:'var(--space-xs)',flex:1}}>
+              <h3 style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h4)',color:'var(--color-text)',margin:0,letterSpacing:'var(--tracking-tight)'}}>{h.name}</h3>
+              <p style={{fontFamily:'var(--font-body)',fontSize:'var(--text-body-sm)',color:'var(--color-text-muted)',lineHeight:'var(--leading-body)',margin:0}}>{h.tagline}</p>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:8,marginTop:'auto',paddingTop:8}}>
+                <span style={{fontFamily:'var(--font-display)',fontSize:'var(--text-h4)',color:'var(--color-text)',letterSpacing:'var(--tracking-tight)'}}>3 500 ₴<span style={{fontFamily:'var(--font-body)',fontSize:'var(--text-body-sm)',color:'var(--color-text-muted)',fontWeight:400}}>/ніч</span></span>
+                <Button variant="primary">Забронювати</Button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -164,7 +182,7 @@ function Footer(){
       <div className="wrap" style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'var(--space-lg)'}}>
         <div>
           <img src="../../assets/logo-on-dark.svg" alt="Білий Лев" style={{height:57}}/>
-          <div style={{fontSize:12,letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',color:'var(--color-text-muted)',marginTop:6}}>white.lev.travel</div>
+          <div style={{fontSize:12,letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',color:'var(--color-text-muted)',marginTop:6}}></div>
         </div>
         <div style={{display:'flex',gap:'var(--space-2xl)',fontSize:14}}>
           <div style={{display:'flex',flexDirection:'column',gap:8}}>
@@ -179,13 +197,13 @@ function Footer(){
           </div>
         </div>
       </div>
-      <div className="wrap" style={{marginTop:'var(--space-lg)',fontSize:12,color:'var(--color-text-muted)'}}>© 2026 white.lev.travel</div>
+      <div className="wrap" style={{marginTop:'var(--space-lg)',fontSize:12,color:'var(--color-text-muted)'}}></div>
     </div>
   );
 }
 
 function App(){
-  return (<React.Fragment><Nav/><Hero/><Values/><Tiers/><Gallery/><Journey/><Faq/><Footer/></React.Fragment>);
+  return (<React.Fragment><Nav/><Hero/><Values/><Tiers/><GreenLoveSeries/><Journey/><Faq/><Footer/></React.Fragment>);
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>

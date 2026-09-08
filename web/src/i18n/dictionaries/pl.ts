@@ -5,6 +5,7 @@ const pl: Dict = {
   brandSub: '„Biały Lew”',
   nav: {
     houses: 'Domy',
+    series: 'Green Love',
     economics: 'Ekonomia',
     location: 'Lokalizacja',
     masterplan: 'Plan zagosp.',
@@ -14,13 +15,92 @@ const pl: Dict = {
     book: 'Rezerwacja',
   },
   hero: {
-    kicker: 'Pogórze Karpat · Bojkowszczyzna · uroczysko „Warusz”',
-    title: 'Widokowe domy w górach — aktyw dochodowy i miejsce wypoczynku',
+    kicker: 'White.Lev.Travel · Bojkowszczyzna',
+    title: 'Prywatny wypoczynek wśród zielonych gór',
     subtitle:
-      'Osiedle prywatnych domów w jednym stylu. Kup dom jako aktyw zarabiający na najmie albo przyjedź odpocząć w ciszy pogórza.',
-    ctaInvest: 'Chcę inwestować',
-    ctaBook: 'Chcę odpocząć',
+      'Wolnostojące domy na zboczu, każdy z własnym tarasem, widokiem i balią. Najmniej sąsiadów, najwięcej ciszy — dla pary lub rodziny z dziećmi.',
+    ctaInvest: 'Wybierz dom',
+    ctaBook: 'O lokalizacji',
     scroll: 'Przewiń w dół',
+  },
+  values: {
+    natureTitle: 'Natura',
+    natureText:
+      'Każdy dom stoi w malowniczym punkcie działki — z widokiem na góry, las lub dolinę.',
+    privacyTitle: 'Prywatność',
+    privacyText:
+      'Okna, tarasy i balie są tak ustawione, by goście różnych domów nie widzieli się nawzajem.',
+    comfortTitle: 'Komfort',
+    comfortText: 'Zaprojektowane dla pary lub rodziny z dwojgiem dzieci, o każdej porze roku.',
+  },
+  series: {
+    eyebrow: 'Green Love Travel · wnętrze',
+    title: 'Cztery motywy jednego Compact',
+    subtitle:
+      'Ten sam układ Compact, własny motyw wnętrza i własna cena za noc w każdym domu. Tylko dla dwojga dorosłych gości, bez dzieci.',
+    perNight: '/noc',
+    book: 'Rezerwuj',
+    exterior: 'zewnątrz',
+    interior: 'wnętrze',
+    photoSoon: 'Zdjęcia w drodze',
+    houses: [
+      {
+        no: '01',
+        name: 'Adam i Ewa',
+        tagline: 'Biała baza · czerwony zagłówek · lustrzane akcenty',
+        price: '3 500 ₴',
+      },
+      {
+        no: '02',
+        name: 'Picasso',
+        tagline: 'Sztuka · muzyka · lwowskie wspomnienia',
+        price: '3 500 ₴',
+      },
+      {
+        no: '03',
+        name: 'Max Royal',
+        tagline: 'Ciemne drewno · fakturowy kamień · jasne tkaniny · stłumiona zieleń',
+        price: '3 500 ₴',
+      },
+      {
+        no: '04',
+        name: 'Romeo i Julia',
+        tagline: 'Ciepły kamień · motywy łuków · lekki baldachim · bordowy aksamit',
+        price: '3 500 ₴',
+      },
+    ],
+  },
+  journey: {
+    eyebrow: 'Doświadczenie gościa',
+    title: 'Od rezerwacji do ciszy',
+    steps: [
+      'Prosta rezerwacja online i jasna informacja o dojeździe.',
+      'Zameldowanie i parking bez szukania administratora.',
+      'Czysty, ciepły dom z przygotowaną sypialnią.',
+      'Prywatny wypoczynek: taras, balia, kominek lub spacer w górach.',
+    ],
+  },
+  faq: {
+    eyebrow: 'Pytania',
+    title: 'Pytania i odpowiedzi',
+    items: [
+      {
+        q: 'Ilu gości mieści dom?',
+        a: 'Tematyczne domy Compact z serii Green Love są tylko dla dwojga dorosłych, bez dzieci. Bazowy Compact jest dla pary lub pary z 1–2 dzieci.',
+      },
+      {
+        q: 'Czy można z dziećmi?',
+        a: 'W serii Green Love — nie, to format dla dwojga. Dla rodziny z dziećmi jest bazowy Compact z osobnym miejscem do spania w salonie.',
+      },
+      {
+        q: 'Czy goście różnych domów się widzą?',
+        a: 'Nie. Tarasy, okna i balie są rozmieszczone tak, by zachować prywatność każdego domu.',
+      },
+      {
+        q: 'Co obejmuje pobyt?',
+        a: 'Gotowy do zamieszkania dom, taras z widokiem i własna strefa grilla lub balia — zależnie od domu.',
+      },
+    ],
   },
   audience: {
     title: 'Dwie drogi',

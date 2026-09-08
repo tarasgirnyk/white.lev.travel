@@ -34,9 +34,10 @@ export function Footer({
         <div>
           <h4 className="eyebrow mb-4">{dict.footer.nav}</h4>
           <ul className="space-y-2.5 text-sm text-fg-dim">
+            <li><Link href={`${base}#series`} className="hover:text-fg">{dict.nav.series}</Link></li>
+            <li><Link href={`${base}#journey`} className="hover:text-fg">{dict.nav.location}</Link></li>
+            <li><Link href={`${base}#faq`} className="hover:text-fg">{dict.nav.contact}</Link></li>
             <li><Link href={`${base}/houses`} className="hover:text-fg">{dict.nav.houses}</Link></li>
-            <li><Link href={`${base}#economics`} className="hover:text-fg">{dict.nav.economics}</Link></li>
-            <li><Link href={`${base}#location`} className="hover:text-fg">{dict.nav.location}</Link></li>
             <li><Link href={`${base}/blog`} className="hover:text-fg">{dict.nav.blog}</Link></li>
           </ul>
         </div>

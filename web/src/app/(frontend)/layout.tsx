@@ -6,7 +6,7 @@ import './globals.css'
 export const metadata = {
   title: 'White.Lev.Travel · «Білий Лев»',
   description:
-    'Заміський комплекс приватних будинків у Прикарпатті. Видові будинки як дохідний актив і як відпочинок.',
+    'Заміський комплекс приватних будинків у Прикарпатті. Приватний відпочинок серед зелених гір — тематична серія Green Love Travel.',
 }
 
 export default async function FrontendRootLayout({
