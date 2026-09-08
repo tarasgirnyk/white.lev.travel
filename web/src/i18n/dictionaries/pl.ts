@@ -46,24 +46,28 @@ const pl: Dict = {
     houses: [
       {
         no: '01',
+        img: 'green-love-adam-eve',
         name: 'Adam i Ewa',
         tagline: 'Biała baza · czerwony zagłówek · lustrzane akcenty',
         price: '3 500 ₴',
       },
       {
         no: '02',
+        img: 'green-love-picasso',
         name: 'Picasso',
         tagline: 'Sztuka · muzyka · lwowskie wspomnienia',
         price: '3 500 ₴',
       },
       {
         no: '03',
+        img: 'green-love-max-royal',
         name: 'Max Royal',
         tagline: 'Ciemne drewno · fakturowy kamień · jasne tkaniny · stłumiona zieleń',
         price: '3 500 ₴',
       },
       {
         no: '04',
+        img: 'green-love-romeo-juliet',
         name: 'Romeo i Julia',
         tagline: 'Ciepły kamień · motywy łuków · lekki baldachim · bordowy aksamit',
         price: '3 500 ₴',

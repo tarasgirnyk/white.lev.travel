@@ -44,24 +44,28 @@ const uk = {
     houses: [
       {
         no: '01',
+        img: 'green-love-adam-eve',
         name: 'Адам і Єва',
         tagline: 'Біла основа · червоне узголів’я · дзеркальні акценти',
         price: '3 500 ₴',
       },
       {
         no: '02',
+        img: 'green-love-picasso',
         name: 'Пікассо',
         tagline: 'Мистецтво · музика · львівські спогади',
         price: '3 500 ₴',
       },
       {
         no: '03',
+        img: 'green-love-max-royal',
         name: 'Max Royal',
         tagline: 'Темне дерево · фактурний камінь · світлий текстиль · приглушена зелень',
         price: '3 500 ₴',
       },
       {
         no: '04',
+        img: 'green-love-romeo-juliet',
         name: 'Ромео і Джульєтта',
         tagline: 'Теплий камінь · аркові мотиви · легкий балдахін · бордовий оксамит',
         price: '3 500 ₴',

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { HouseSvg } from './HouseSvg'
 import type { Locale } from '@/i18n/config'
 import type { Dict } from '@/i18n'
 
@@ -14,24 +13,15 @@ export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {s.houses.map((h) => (
-            <article
-              key={h.no}
-              className="card card-hover flex flex-col overflow-hidden"
-            >
-              <div className="relative grid grid-cols-2 gap-0.5">
-                <div className="relative aspect-square overflow-hidden bg-surface-2">
-                  <HouseSvg segment="compact" className="w-full h-full object-cover" />
-                </div>
-                <div className="relative aspect-square overflow-hidden bg-surface-3 flex items-center justify-center p-3">
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-muted text-center">
-                    {s.interior}
-                    <br />
-                    {s.photoSoon}
-                  </span>
-                </div>
-                <span className="badge absolute top-3 left-3 z-10 pointer-events-none">
-                  Compact №{h.no}
-                </span>
+            <article key={h.no} className="card card-hover flex flex-col overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={`/photography/${h.img}.png`}
+                  alt={`${h.name} — ${s.interior}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <span className="badge absolute top-3 left-3 z-10">Compact №{h.no}</span>
               </div>
 
               <div className="p-5 flex flex-col gap-2 flex-1">

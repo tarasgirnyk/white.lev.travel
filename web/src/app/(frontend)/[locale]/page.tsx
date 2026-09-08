@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getDict } from '@/i18n'
 import { isLocale, type Locale } from '@/i18n/config'
-import { HouseSvg } from '@/components/HouseSvg'
 import { GreenLoveSeries } from '@/components/GreenLoveSeries'
 import { FaqList } from '@/components/FaqList'
 import { InquiryForm } from '@/components/InquiryForm'
@@ -24,12 +23,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[88vh] flex items-end">
         <div className="absolute inset-0 -z-10">
-          <HouseSvg segment="vip" className="w-full h-full object-cover opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink" />
+          <img
+            src="/photography/vip-exterior.png"
+            alt="Будинок White.Lev.Travel у горах на заході сонця"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/25 to-ink" />
         </div>
-        <div className="container-wlt pt-24 pb-28 sm:pt-32 sm:pb-36 max-w-3xl">
+        <div className="container-wlt pt-28 pb-16 sm:pb-24 max-w-3xl">
           <p className="eyebrow">{dict.hero.kicker}</p>
           <h1 className="display text-4xl sm:text-6xl xl:text-7xl mt-5">{dict.hero.title}</h1>
           <p className="mt-6 text-lg text-fg-dim max-w-xl leading-relaxed">{dict.hero.subtitle}</p>
