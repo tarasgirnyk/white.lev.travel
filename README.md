@@ -9,6 +9,8 @@
 
 [«Адам і Єва» — візуальна пропозиція](planning/26_adam_eve_concept.html) · [готовий кадр](planning/26_adam_eve_concept.png).
 
+[«Адам і Єва» — повне планування зверху](planning/27_adam_eve_top_view.html) · [кадр зверху](planning/27_adam_eve_top_view.png).
+
 - **`КОНЦЕПЦІЯ_БУДІВНИЦТВА_WHITE_LEV_TRAVEL.md`** — головний концептуальний документ
 - **`reference.txt`** — референси стилю будиночків
 - **`planning/`** — робочі етапи проєкту:

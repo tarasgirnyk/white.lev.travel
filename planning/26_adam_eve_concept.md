@@ -17,6 +17,8 @@
 
 ## Перегляд
 
+- [Повне планування зверху](27_adam_eve_top_view.png) · [опис планування](27_adam_eve_top_view.md)
+
 - [Зображення](26_adam_eve_concept.png)
 - [Сторінка перегляду](26_adam_eve_concept.html)
 
