@@ -4,8 +4,7 @@ RUN apk add --no-cache libc6-compat && corepack enable
 WORKDIR /app
 
 # 1) Залежності (усі — потрібні для збірки)
-COPY package.json pnpm-lock.yaml* ./
-RUN pnpm config set onlyBuiltDependencies[] sharp 2>/dev/null || true
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile || pnpm install
 RUN pnpm rebuild sharp esbuild || true
 
