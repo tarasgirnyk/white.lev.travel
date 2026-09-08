@@ -23,16 +23,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden min-h-[88vh] flex items-end">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src="/photography/vip-exterior.png"
-            alt="Будинок White.Lev.Travel у горах на заході сонця"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/25 to-ink" />
-        </div>
-        <div className="container-wlt pt-28 pb-16 sm:pb-24 max-w-3xl">
+      <section className="relative isolate overflow-hidden min-h-[88vh] flex items-end">
+        <img
+          src="/photography/vip-exterior.png"
+          alt="Будинок White.Lev.Travel у горах на заході сонця"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-ink/30 via-ink/40 to-ink" />
+        <div className="relative z-10 container-wlt pt-28 pb-16 sm:pb-24 max-w-3xl">
           <p className="eyebrow">{dict.hero.kicker}</p>
           <h1 className="display text-4xl sm:text-6xl xl:text-7xl mt-5">{dict.hero.title}</h1>
           <p className="mt-6 text-lg text-fg-dim max-w-xl leading-relaxed">{dict.hero.subtitle}</p>
