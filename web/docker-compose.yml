@@ -1,34 +1,20 @@
 services:
-  db:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER:-wlt}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wlt}
-      POSTGRES_DB: ${POSTGRES_DB:-whitelevtravel}
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-wlt}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   web:
     build:
       context: .
     restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
-      DATABASE_URI: postgres://${POSTGRES_USER:-wlt}:${POSTGRES_PASSWORD:-wlt}@db:5432/${POSTGRES_DB:-whitelevtravel}
+      DATABASE_URI: ${DATABASE_URI}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-https://white.lev.travel}
       SEED_ON_INIT: ${SEED_ON_INIT:-true}
       ADMIN_EMAIL: ${ADMIN_EMAIL:-gor@miotex.com}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD}
       MEDIA_DIR: /app/media
+    # Доступ до нативного Postgres на самому сервері (не в контейнері).
+    # host.docker.internal вказує з контейнера на хост-машину.
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     volumes:
       - media:/app/media
     expose:
@@ -50,7 +36,6 @@ services:
       - caddy-config:/config
 
 volumes:
-  db-data:
   media:
   caddy-data:
   caddy-config:
