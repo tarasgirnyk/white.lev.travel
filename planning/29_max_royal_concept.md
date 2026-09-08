@@ -34,7 +34,7 @@
 
 ## Перегляд
 
-[Кадр зверху](29_max_royal_concept.png) · [Сторінка перегляду](29_max_royal_concept.html) · [Адам і Єва](27_adam_eve_top_view.png) · [Пікассо](28_picasso_concept.png).
+[Кадр зверху](29_max_royal_concept.png) · [Сторінка перегляду](29_max_royal_concept.html) · [Адам і Єва](27_adam_eve_top_view.png) · [Пікассо](28_picasso_concept.png) · [Ромео і Джульєтта](30_romeo_juliet_concept.png).
 
 ## Генерація
 
