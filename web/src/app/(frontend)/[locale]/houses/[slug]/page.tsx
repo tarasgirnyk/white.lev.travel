@@ -29,9 +29,9 @@ export default async function HousePage({ params }: { params: Promise<{ locale: 
   const h = dict.houses
 
   const stats = [
-    { label: h.area, value: range(house.areaFrom, house.areaTo, ' м²') },
-    { label: h.terrace, value: house.terraceArea ? `${house.terraceArea} м²` : '—' },
-    { label: h.bedrooms, value: house.bedrooms ?? '—' },
+    { label: h.area, value: (house.areaFrom == null ? h.pending : range(house.areaFrom, house.areaTo, ' м²')) },
+    { label: h.terrace, value: house.terraceArea ? `${house.terraceArea} м²` : h.pending },
+    { label: h.bedrooms, value: 1 },
     { label: h.guests, value: house.guests ?? '—' },
   ]
 
@@ -104,15 +104,15 @@ export default async function HousePage({ params }: { params: Promise<{ locale: 
           <div className="card p-6 space-y-3 text-sm">
             <div className="flex justify-between border-b border-line pb-2.5">
               <span className="text-muted">{h.asset}</span>
-              <span className="font-semibold">{usd(house.assetPriceUsd)}</span>
+              <span className="font-semibold">{house.assetPriceUsd == null ? h.pending : usd(house.assetPriceUsd)}</span>
             </div>
             <div className="flex justify-between border-b border-line pb-2.5">
               <span className="text-muted">{h.yield}</span>
-              <span className="font-semibold text-ember">{house.yieldPct ? `${house.yieldPct}%` : '—'}</span>
+              <span className="font-semibold text-ember">{house.yieldPct != null ? `${house.yieldPct}%` : h.pending}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted">{h.nightly}</span>
-              <span className="font-semibold">{usdK(house.nightlyMinUsd)}–{usdK(house.nightlyMaxUsd)}{h.perNight}</span>
+              <span className="font-semibold">{house.nightlyMinUsd == null ? h.pending : usdK(house.nightlyMinUsd) + h.perNight}</span>
             </div>
           </div>
 

@@ -43,9 +43,9 @@ export const Inquiries: CollectionConfig = {
       type: 'select',
       label: { uk: 'Тип будинку', en: 'House type', pl: 'Typ domu' },
       options: [
-        { label: 'Compact', value: 'compact' },
+        { label: 'Compact (архів)', value: 'compact' },
         { label: 'Comfort', value: 'comfort' },
-        { label: 'VIP', value: 'vip' },
+        { label: 'VIP (окремий концепт)', value: 'vip' },
         { label: { uk: 'Не визначився', en: 'Not sure', pl: 'Nie wiem' }, value: 'unsure' },
       ],
     },

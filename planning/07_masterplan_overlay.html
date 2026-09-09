@@ -4,25 +4,25 @@
   .stage { position:relative; width:2400px; height:1350px; overflow:hidden; }
   .bg { position:absolute; inset:0; width:2400px; height:1350px; object-fit:cover; }
   svg { position:absolute; inset:0; }
-  .panel { position:absolute; background:rgba(9,32,22,0.82); color:#f3f7f0;
-           border:2px solid rgba(232,193,80,0.55); border-radius:16px;
+  .panel { position:absolute; background:rgba(18,18,18,0.9); color:#f3f7f0;
+           border:2px solid rgba(255,255,255,0.6); border-radius:16px;
            box-shadow:0 10px 34px rgba(0,0,0,.45); backdrop-filter:saturate(1.1); }
   .title { left:44px; top:40px; padding:22px 30px; max-width:1120px; }
   .title h1 { font-size:50px; font-weight:800; letter-spacing:.2px; }
-  .title h1 .g { color:#e8c150; }
-  .title p { font-size:27px; margin-top:8px; color:#cfe0d3; font-weight:600; }
+  .title h1 .g { color:#ffffff; }
+  .title p { font-size:27px; margin-top:8px; color:#eeeeee; font-weight:600; }
   .title .disc { font-size:21px; margin-top:10px; color:#ffce8f; font-weight:700; }
   .legend { right:40px; top:392px; width:560px; padding:24px 26px; }
   .legend h2 { font-size:30px; font-weight:800; margin-bottom:6px; }
-  .legend h2 span { color:#e8c150; }
+  .legend h2 span { color:#ffffff; }
   .card { display:flex; gap:18px; align-items:center; padding:16px 6px; border-top:1px solid rgba(255,255,255,.14); }
   .card:first-of-type { border-top:none; }
   .badge { min-width:88px; height:60px; border-radius:12px; display:flex; align-items:center;
            justify-content:center; font-size:30px; font-weight:800; border:3px solid rgba(0,0,0,.25); }
-  .tier { font-size:20px; font-weight:800; color:#e8c150; letter-spacing:.5px; }
+  .tier { font-size:20px; font-weight:800; color:#ffffff; letter-spacing:.5px; }
   .cname { font-size:29px; font-weight:800; }
-  .cmeta { font-size:22px; color:#d3e2d7; }
-  .keyrow { display:flex; align-items:center; gap:12px; font-size:23px; margin-top:12px; color:#e7efe8; }
+  .cmeta { font-size:22px; color:#eeeeee; }
+  .keyrow { display:flex; align-items:center; gap:12px; font-size:23px; margin-top:12px; color:#eeeeee; }
   .sw { width:34px; height:20px; border-radius:5px; display:inline-block; }
   .foot { left:44px; bottom:34px; padding:14px 22px; font-size:23px; font-weight:700; color:#eaf3ec; }
 </style></head>
@@ -62,47 +62,11 @@
 
       <!-- view arrows + houses -->
       <line x1="562" y1="775" x2="450" y2="885" stroke="#ffd24a" stroke-width="7" marker-end="url(#va)" opacity="0.95"/><line x1="792" y1="875" x2="680" y2="985" stroke="#ffd24a" stroke-width="7" marker-end="url(#va)" opacity="0.95"/><line x1="942" y1="970" x2="830" y2="1080" stroke="#ffd24a" stroke-width="7" marker-end="url(#va)" opacity="0.95"/><line x1="1212" y1="1170" x2="1100" y2="1280" stroke="#ffd24a" stroke-width="7" marker-end="url(#va)" opacity="0.95"/>
-      
-    <g class="house">
-      <rect x="548" y="694" width="104" height="82" rx="12"
-            fill="none" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
-      <rect x="554" y="700" width="92" height="70" rx="9"
-            fill="#8ed3a4" stroke="#1c5c39" stroke-width="4"/>
-      <rect x="526" y="746" width="28" height="24"
-            fill="#8ed3a4" opacity="0.55" stroke="#1c5c39" stroke-width="2"/>
-      <circle cx="600" cy="670" r="27" fill="#ffffff" stroke="#1c5c39" stroke-width="4"/>
-      <text x="600" y="679" text-anchor="middle" font-size="30" font-weight="800" fill="#0d2a1c">C1</text>
-    </g>
-    <g class="house">
-      <rect x="778" y="794" width="104" height="82" rx="12"
-            fill="none" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
-      <rect x="784" y="800" width="92" height="70" rx="9"
-            fill="#8ed3a4" stroke="#1c5c39" stroke-width="4"/>
-      <rect x="756" y="846" width="28" height="24"
-            fill="#8ed3a4" opacity="0.55" stroke="#1c5c39" stroke-width="2"/>
-      <circle cx="830" cy="770" r="27" fill="#ffffff" stroke="#1c5c39" stroke-width="4"/>
-      <text x="830" y="779" text-anchor="middle" font-size="30" font-weight="800" fill="#0d2a1c">C2</text>
-    </g>
-    <g class="house">
-      <rect x="918" y="882" width="124" height="96" rx="12"
-            fill="none" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
-      <rect x="924" y="888" width="112" height="84" rx="9"
-            fill="#35b062" stroke="#0f3f26" stroke-width="4"/>
-      <rect x="890" y="943" width="34" height="29"
-            fill="#35b062" opacity="0.55" stroke="#0f3f26" stroke-width="2"/>
-      <circle cx="980" cy="858" r="27" fill="#ffffff" stroke="#0f3f26" stroke-width="4"/>
-      <text x="980" y="867" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">K</text>
-    </g>
-    <g class="house">
-      <rect x="1174" y="1072" width="152" height="116" rx="12"
-            fill="none" stroke="#ffffff" stroke-width="7" opacity="0.9"/>
-      <rect x="1180" y="1078" width="140" height="104" rx="9"
-            fill="#e8c150" stroke="#8a6a12" stroke-width="4"/>
-      <rect x="1138" y="1147" width="42" height="35"
-            fill="#e8c150" opacity="0.55" stroke="#8a6a12" stroke-width="2"/>
-      <circle cx="1250" cy="1048" r="27" fill="#ffffff" stroke="#8a6a12" stroke-width="4"/>
-      <text x="1250" y="1057" text-anchor="middle" font-size="30" font-weight="800" fill="#3a2c05">V</text>
-    </g>
+
+    <g class="house"><rect x="554" y="700" width="92" height="70" rx="8" fill="#222" stroke="white" stroke-width="5"/><rect x="536" y="744" width="18" height="26" fill="#ddd" stroke="#222" stroke-width="3"/><circle cx="600" cy="673" r="28" fill="white" stroke="#222" stroke-width="3"/><text x="600" y="683" text-anchor="middle" font-size="30" font-weight="800" fill="#222">1</text></g>
+    <g class="house"><rect x="784" y="800" width="92" height="70" rx="8" fill="#222" stroke="white" stroke-width="5"/><rect x="766" y="844" width="18" height="26" fill="#ddd" stroke="#222" stroke-width="3"/><circle cx="830" cy="773" r="28" fill="white" stroke="#222" stroke-width="3"/><text x="830" y="783" text-anchor="middle" font-size="30" font-weight="800" fill="#222">2</text></g>
+    <g class="house"><rect x="934" y="895" width="92" height="70" rx="8" fill="#222" stroke="white" stroke-width="5"/><rect x="916" y="939" width="18" height="26" fill="#ddd" stroke="#222" stroke-width="3"/><circle cx="980" cy="868" r="28" fill="white" stroke="#222" stroke-width="3"/><text x="980" y="878" text-anchor="middle" font-size="30" font-weight="800" fill="#222">3</text></g>
+    <g class="house"><rect x="1204" y="1095" width="92" height="70" rx="8" fill="#222" stroke="white" stroke-width="5"/><rect x="1186" y="1139" width="18" height="26" fill="#ddd" stroke="#222" stroke-width="3"/><circle cx="1250" cy="1068" r="28" fill="white" stroke="#222" stroke-width="3"/><text x="1250" y="1078" text-anchor="middle" font-size="30" font-weight="800" fill="#222">4</text></g>
 
       <!-- ENTRY / tech node -->
       <line x1="150" y1="1330" x2="470" y2="1176" stroke="#caa96a" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
@@ -126,44 +90,11 @@
 
     <div class="panel title">
       <h1><span class="g">White.Lev.Travel</span> — концепт-схема розміщення</h1>
-      <p>урочище «Варуш», с. Явора · масив ≈ 0.44 га · Сценарій A (2×Compact + Comfort + VIP)</p>
+      <p>урочище «Варуш», с. Явора · масив ≈ 0.44 га · 4×Comfort · 2 дорослих у кожному · 18+</p>
       <p class="disc">СХЕМА поверх аерознімка — концептуальна, НЕ в масштабі. Точні межі й позначки — за топозйомкою.</p>
     </div>
 
-    <div class="panel legend">
-      <h2>Сегменти <span>дешевий → дорогий</span></h2>
-      
-    <div class="card">
-      <div class="badge" style="background:#8ed3a4;color:#0d2a1c;">C1 · C2</div>
-      <div class="cbody">
-        <div class="tier">ДЕШЕВШИЙ СЕГМЕНТ</div>
-        <div class="cname">Compact ×2</div>
-        <div class="cmeta">35–45 м² · ~$46k / буд.</div>
-        <div class="cmeta">оренда $72–83 / ніч</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="badge" style="background:#2f9d5b;color:#ffffff;">K</div>
-      <div class="cbody">
-        <div class="tier">СЕРЕДНІЙ</div>
-        <div class="cname">Comfort ×1</div>
-        <div class="cmeta">50–60 м² · ~$73k</div>
-        <div class="cmeta">оренда $95–107 / ніч</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="badge" style="background:#e8c150;color:#3a2c05;">V</div>
-      <div class="cbody">
-        <div class="tier">ДОРОГИЙ СЕГМЕНТ</div>
-        <div class="cname">VIP-вілла ×1</div><div class="cmeta">Сауна + джакузі · концепт 24</div>
-        <div class="cmeta">85–100 м² · ~$157k</div>
-        <div class="cmeta">оренда $155–190 / ніч</div>
-      </div>
-    </div>
-      <div class="keyrow"><span class="sw" style="background:#ffd24a;"></span> напрям виду / терас — Пд-Зх (вниз по схилу)</div>
-      <div class="keyrow"><span class="sw" style="background:#ffb52e;"></span> коридор ЛЕП · <span class="sw" style="background:#3f7d3a;"></span> буфер залізниці</div>
-    </div>
-
-    <div class="panel foot">4 самодостатні будинки · кожен: власний вхід, тераса на Пд-Зх, wellness, приватність · розсунуті так, щоб видові коридори не перетиналися</div>
+    <div class="panel legend"><h2>Чотири тематичні Comfort</h2><div class="card"><div class="badge" style="background:#fff;color:#222">1</div><div><div class="cname">Адам і Єва</div><div class="cmeta">2 дорослих · 18+ · без дітей</div></div></div><div class="card"><div class="badge" style="background:#fff;color:#222">2</div><div><div class="cname">Пікассо</div><div class="cmeta">2 дорослих · 18+ · без дітей</div></div></div><div class="card"><div class="badge" style="background:#fff;color:#222">3</div><div><div class="cname">Max Royal</div><div class="cmeta">2 дорослих · 18+ · без дітей</div></div></div><div class="card"><div class="badge" style="background:#fff;color:#222">4</div><div><div class="cname">Ромео і Джульєтта</div><div class="cmeta">2 дорослих · 18+ · без дітей</div></div></div><div class="keyrow">Однакова будівельна база.</div><div class="keyrow">Точні місця та площі уточнюються.</div></div>
+<div class="panel foot">4 Comfort · до 8 дорослих · приватні тераси · необхідне оснащення · доступне виконання · схема для перевірки генпланом</div>
   </div>
 </body></html>

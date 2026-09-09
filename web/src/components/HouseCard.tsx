@@ -34,18 +34,18 @@ export function HouseCard({
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="text-lg font-semibold">{house.title}</h3>
-          <span className="text-sm text-muted whitespace-nowrap">{range(house.areaFrom, house.areaTo, ' м²')}</span>
+          <span className="text-sm text-muted whitespace-nowrap">{(house.areaFrom == null ? h.pending : range(house.areaFrom, house.areaTo, ' м²'))}</span>
         </div>
         {house.tagline && <p className="mt-1.5 text-sm text-fg-dim line-clamp-2">{house.tagline}</p>}
 
         <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
           <div className="flex justify-between border-b border-line pb-1.5">
             <dt className="text-muted">{h.asset}</dt>
-            <dd className="font-medium">{usdK(house.assetPriceUsd)}</dd>
+            <dd className="font-medium">{house.assetPriceUsd == null ? h.pending : usdK(house.assetPriceUsd)}</dd>
           </div>
           <div className="flex justify-between border-b border-line pb-1.5">
             <dt className="text-muted">{h.yield}</dt>
-            <dd className="font-medium text-ember">{house.yieldPct ? `${house.yieldPct}%` : '—'}</dd>
+            <dd className="font-medium text-ember">{house.yieldPct != null ? `${house.yieldPct}%` : h.pending}</dd>
           </div>
           <div className="flex justify-between">
             <dt className="text-muted">{h.guests}</dt>
@@ -53,7 +53,7 @@ export function HouseCard({
           </div>
           <div className="flex justify-between">
             <dt className="text-muted">{h.nightly}</dt>
-            <dd className="font-medium">{usdK(house.nightlyMinUsd)}{h.perNight}</dd>
+            <dd className="font-medium">{house.nightlyMinUsd == null ? h.pending : usdK(house.nightlyMinUsd) + h.perNight}</dd>
           </div>
         </dl>
 

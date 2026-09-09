@@ -53,7 +53,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* GREEN LOVE TRAVEL — 4 ТЕМАТИЧНІ COMPACT */}
+      {/* GREEN LOVE TRAVEL — 4 ТЕМАТИЧНІ COMFORT */}
       <GreenLoveSeries locale={l} dict={dict} />
 
       {/* ДОСВІД ГОСТЯ */}

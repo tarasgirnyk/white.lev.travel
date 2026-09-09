@@ -24,8 +24,8 @@ export function InquiryForm({ locale, dict }: { locale: Locale; dict: Dict }) {
           phone: data.get('phone'),
           email: data.get('email') || undefined,
           intent: data.get('intent'),
-          houseType: data.get('houseType'),
-          message: data.get('message') || undefined,
+          houseType: 'comfort',
+          message: [data.get('houseTheme'), data.get('message')].filter(Boolean).join(' · ') || undefined,
           locale,
           sourcePath: typeof window !== 'undefined' ? window.location.pathname : undefined,
         }),
@@ -80,11 +80,9 @@ export function InquiryForm({ locale, dict }: { locale: Locale; dict: Dict }) {
         </label>
         <label className="grid gap-1.5 text-sm">
           <span className="text-fg-dim">{f.houseType}</span>
-          <select name="houseType" defaultValue="unsure" className={field}>
-            <option value="compact">Compact</option>
-            <option value="comfort">Comfort</option>
-            <option value="vip">VIP</option>
-            <option value="unsure">{f.houseUnsure}</option>
+          <select name="houseTheme" defaultValue="" className={field}>
+            <option value="">{f.houseUnsure}</option>
+            {dict.series.houses.map(h => <option key={h.no} value={h.name}>{h.name}</option>)}
           </select>
         </label>
       </div>

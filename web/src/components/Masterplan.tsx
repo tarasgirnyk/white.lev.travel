@@ -8,10 +8,34 @@ import type { Dict } from '@/i18n'
 type Spot = { id: string; label: string; slug: string; x: number; y: number }
 
 const spots: Spot[] = [
-  { id: 'c1', label: 'Compact', slug: 'compact', x: 30, y: 62 },
-  { id: 'c2', label: 'Compact', slug: 'compact', x: 44, y: 54 },
-  { id: 'cf', label: 'Comfort', slug: 'comfort', x: 60, y: 46 },
-  { id: 'vip', label: 'VIP', slug: 'vip', x: 78, y: 34 },
+  {
+    "id": "1",
+    "label": "1",
+    "slug": "adam-eve",
+    "x": 30,
+    "y": 62
+  },
+  {
+    "id": "2",
+    "label": "2",
+    "slug": "picasso",
+    "x": 44,
+    "y": 54
+  },
+  {
+    "id": "3",
+    "label": "3",
+    "slug": "max-royal",
+    "x": 60,
+    "y": 46
+  },
+  {
+    "id": "4",
+    "label": "4",
+    "slug": "romeo-juliet",
+    "x": 78,
+    "y": 34
+  }
 ]
 
 export function Masterplan({ locale, dict }: { locale: Locale; dict: Dict }) {
@@ -58,11 +82,11 @@ export function Masterplan({ locale, dict }: { locale: Locale; dict: Dict }) {
                 onFocus={() => setActive(s.id)}
                 onBlur={() => setActive(null)}
                 className="group relative block"
-                aria-label={s.label}
+                aria-label={dict.series.houses[Number(s.id) - 1].name}
               >
                 <span className={`block w-4 h-4 rounded-full border-2 transition-all ${on ? 'bg-ember border-ember scale-110' : 'bg-ink border-fg-dim'}`} />
                 <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 whitespace-nowrap rounded-lg bg-ink px-2.5 py-1 text-xs border border-line-strong shadow-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none">
-                  {s.label}
+                  {dict.series.houses[Number(s.id) - 1].name}
                 </span>
               </Link>
             </div>
@@ -73,9 +97,7 @@ export function Masterplan({ locale, dict }: { locale: Locale; dict: Dict }) {
       <div className="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <p className="text-xs text-muted max-w-md">{dict.masterplan.note}</p>
         <div className="flex gap-4 text-xs text-fg-dim">
-          <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-fg-dim" /> 2× Compact</span>
-          <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-fg-dim" /> Comfort</span>
-          <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-ember" /> VIP</span>
+          <span>4×Comfort · 2 × 18+</span>
         </div>
       </div>
     </div>

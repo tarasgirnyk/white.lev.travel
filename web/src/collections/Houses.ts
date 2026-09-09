@@ -25,9 +25,9 @@ export const Houses: CollectionConfig = {
           admin: { width: '40%' },
           label: { uk: 'Сегмент', en: 'Segment', pl: 'Segment' },
           options: [
-            { label: 'Compact', value: 'compact' },
+            { label: 'Compact (архів)', value: 'compact' },
             { label: 'Comfort', value: 'comfort' },
-            { label: 'VIP', value: 'vip' },
+            { label: 'VIP (окремий концепт)', value: 'vip' },
           ],
         },
       ],

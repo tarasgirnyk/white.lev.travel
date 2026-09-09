@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Locale } from '@/i18n/config'
 import type { Dict } from '@/i18n'
 
+const themeSlugs = ['adam-eve', 'picasso', 'max-royal', 'romeo-juliet']
+
 export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }) {
   const s = dict.series
   return (
@@ -12,7 +14,7 @@ export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }
         <p className="mt-3 max-w-2xl text-fg-dim leading-relaxed">{s.subtitle}</p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {s.houses.map((h) => (
+          {s.houses.map((h, index) => (
             <article key={h.no} className="card card-hover flex flex-col overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -21,7 +23,7 @@ export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <span className="badge absolute top-3 left-3 z-10">Compact №{h.no}</span>
+                <span className="badge absolute top-3 left-3 z-10">Comfort №{h.no}</span>
               </div>
 
               <div className="p-5 flex flex-col gap-2 flex-1">
@@ -32,8 +34,8 @@ export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }
                     {h.price}
                     <span className="text-sm text-muted font-normal">{s.perNight}</span>
                   </span>
-                  <Link href={`/${locale}#contact`} className="btn btn-ember text-sm px-4 py-2.5">
-                    {s.book}
+                  <Link href={`/${locale}/houses/${themeSlugs[index]}`} className="btn btn-ember text-sm px-4 py-2.5">
+                    {dict.houses.details}
                   </Link>
                 </div>
               </div>

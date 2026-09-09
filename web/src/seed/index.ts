@@ -18,9 +18,10 @@ export const seed = async (payload: Payload): Promise<void> => {
   }
 
   // --- Будинки ---
-  const existingHouses = await payload.count({ collection: 'houses' })
-  if (existingHouses.totalDocs === 0) {
+  {
     for (const h of houses) {
+      const existing = await payload.find({ collection: 'houses', where: { slug: { equals: h.slug } }, limit: 1 })
+      if (existing.docs.length) continue
       const created = await payload.create({
         collection: 'houses',
         locale: 'uk',
@@ -67,28 +68,31 @@ export const seed = async (payload: Payload): Promise<void> => {
     }
   }
 
-  // --- Налаштування ---
-  await payload.updateGlobal({
-    slug: 'settings',
-    locale: 'uk',
-    data: {
-      phone: '+380 XX XXX XX XX',
-      email: 'gor@miotex.com',
-      telegram: '',
-      instagram: '',
-      address: 'урочище «Варуш», с. Явора, Турківщина, Львівщина',
-    },
-  })
-  await payload.updateGlobal({
-    slug: 'settings',
-    locale: 'en',
-    data: { address: 'Varush tract, Yavora village, Turka area, Lviv region' },
-  })
-  await payload.updateGlobal({
-    slug: 'settings',
-    locale: 'pl',
-    data: { address: 'uroczysko „Warusz”, wieś Jawora, rejon Turka, obwód lwowski' },
-  })
+  // Наявні контакти не перезаписуються під час повторного запуску.
+  const settings = await payload.findGlobal({ slug: 'settings', locale: 'uk', depth: 0 })
+  if (!settings.id) {
+    await payload.updateGlobal({
+      slug: 'settings',
+      locale: 'uk',
+      data: {
+        phone: '+380 XX XXX XX XX',
+        email: 'gor@miotex.com',
+        telegram: '',
+        instagram: '',
+        address: 'урочище «Варуш», с. Явора, Турківщина, Львівщина',
+      },
+    })
+    await payload.updateGlobal({
+      slug: 'settings',
+      locale: 'en',
+      data: { address: 'Varush tract, Yavora village, Turka area, Lviv region' },
+    })
+    await payload.updateGlobal({
+      slug: 'settings',
+      locale: 'pl',
+      data: { address: 'uroczysko „Warusz”, wieś Jawora, rejon Turka, obwód lwowski' },
+    })
+  }
 
   log('done')
 }
