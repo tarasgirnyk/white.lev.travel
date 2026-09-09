@@ -6,7 +6,7 @@ import type { Dict } from '@/i18n'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
-export function InquiryForm({ locale, dict }: { locale: Locale; dict: Dict }) {
+export function InquiryForm({ locale, dict, defaultIntent = 'invest' }: { locale: Locale; dict: Dict; defaultIntent?: 'invest' | 'stay' | 'other' }) {
   const [status, setStatus] = useState<Status>('idle')
   const f = dict.form
 
@@ -72,7 +72,7 @@ export function InquiryForm({ locale, dict }: { locale: Locale; dict: Dict }) {
       <div className="grid sm:grid-cols-2 gap-4">
         <label className="grid gap-1.5 text-sm">
           <span className="text-fg-dim">{f.intent}</span>
-          <select name="intent" defaultValue="invest" className={field}>
+          <select name="intent" defaultValue={defaultIntent} className={field}>
             <option value="invest">{f.intentInvest}</option>
             <option value="stay">{f.intentStay}</option>
             <option value="other">{f.intentOther}</option>
