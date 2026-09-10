@@ -19,4 +19,4 @@ jobs:
           script_stop: true
           script: |
             cd "${{ secrets.DEPLOY_PATH }}/web"
-            ./deploy.sh
+            bash ./deploy.sh
