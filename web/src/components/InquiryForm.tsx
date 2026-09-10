@@ -30,7 +30,10 @@ export function InquiryForm({ locale, dict, defaultIntent = 'invest' }: { locale
           sourcePath: typeof window !== 'undefined' ? window.location.pathname : undefined,
         }),
       })
-      if (!res.ok) throw new Error('request failed')
+      if (!res.ok) {
+        const result = await res.json().catch(() => null) as { error?: string } | null
+        throw new Error(result?.error || `request failed (${res.status})`)
+      }
       setStatus('success')
       form.reset()
     } catch {
