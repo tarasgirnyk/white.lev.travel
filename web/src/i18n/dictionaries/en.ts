@@ -15,7 +15,7 @@ const en = {
   "hero": {
     "kicker": "White.Lev.Travel · Boykivshchyna",
     "title": "A private retreat among green mountains",
-    "subtitle": "Adam & Eve, Picasso, Max Royal and Romeo & Juliet. One small construction base, four interiors. Each cabin is for two adults only, 18+. Essential amenities, affordable construction and distinctive themed design.",
+    "subtitle": "Adam & Eve, Picasso, Boyko Sycamore and Romeo & Juliet. Three romantic Comfort cabins for two adults and one separate two-level family cabin.",
     "ctaInvest": "Choose a house",
     "ctaBook": "About the location",
     "scroll": "Scroll down"
@@ -26,12 +26,12 @@ const en = {
     "privacyTitle": "Privacy",
     "privacyText": "Windows, terraces and hot tubs are oriented so that guests of different houses do not see one another.",
     "comfortTitle": "Comfort",
-    "comfortText": "Two adults only, 18+. No children or extra beds. Essential amenities, affordable construction and distinctive themed design."
+    "comfortText": "Three Comfort cabins are for two adults, 18+. Boyko Sycamore has an upstairs bedroom and a sofa for children downstairs."
   },
   "series": {
     "eyebrow": "Green Love Travel · interior",
-    "title": "Four themed Comfort cabins for two",
-    "subtitle": "Adam & Eve, Picasso, Max Royal and Romeo & Juliet. One small construction base, four interiors. Each cabin is for two adults only, 18+. Essential amenities, affordable construction and distinctive themed design.",
+    "title": "Four themed cabins",
+    "subtitle": "Three romantic Comfort cabins for two adults. Boyko Sycamore is a two-level family format with an upstairs bedroom, a studio and a sofa for children downstairs.",
     "perNight": "",
     "book": "Book",
     "exterior": "exterior",
@@ -54,9 +54,10 @@ const en = {
       },
       {
         "no": "03",
-        "img": "green-love-max-royal",
-        "name": "Max Royal",
-        "tagline": "Dark wood · textured stone · light textiles · muted green",
+        "img": "green-love-yavir-boykivskyi-ground-floor",
+        "name": "Boyko Sycamore",
+        "tagline": "Lime plaster · smoked oak · contemporary Boyko geometry",
+        "guests": "Family format",
         "price": "Rate to be confirmed"
       },
       {
@@ -84,11 +85,11 @@ const en = {
     "items": [
       {
         "q": "How many guests does a house hold?",
-        "a": "Two adults only, 18+. No children or extra beds."
+        "a": "Adam & Eve, Picasso and Romeo & Juliet are for two adults, 18+. The family capacity of Boyko Sycamore is still to be confirmed."
       },
       {
         "q": "Can we come with children?",
-        "a": "All four Comfort cabins accommodate two adults aged 18 or over only. Children and additional guests are not accommodated."
+        "a": "Boyko Sycamore is designed for families, with a parents’ bedroom upstairs and a convertible sofa for children downstairs. The number of children’s places is still to be confirmed."
       },
       {
         "q": "Do guests of different houses see one another?",
@@ -96,7 +97,7 @@ const en = {
       },
       {
         "q": "What is included in a stay?",
-        "a": "One double bed. Compact kitchenette. Separate shower and WC. Private terrace. Outdoor hot tub and two loungers."
+        "a": "Each cabin includes a kitchenette, separate shower/WC and a private terrace with a hot tub. Boyko Sycamore places the bedroom upstairs and adds a sofa for children in the studio."
       }
     ]
   },
@@ -106,12 +107,12 @@ const en = {
     "investText": "A turnkey income asset: view land + a house + a hot tub/terrace + a ready rental flow with operations taken off your hands. Two income streams: rent now and value appreciation later.",
     "investCta": "Investor package",
     "stayTitle": "For the guest",
-    "stayText": "Adam & Eve, Picasso, Max Royal and Romeo & Juliet. One small construction base, four interiors. Each cabin is for two adults only, 18+. Essential amenities, affordable construction and distinctive themed design.",
+    "stayText": "Adam & Eve, Picasso and Romeo & Juliet are for two adults. Boyko Sycamore is a separate two-level family format.",
     "stayCta": "Book a stay"
   },
   "houses": {
-    "title": "Four themed Comfort cabins for two",
-    "subtitle": "Adam & Eve, Picasso, Max Royal and Romeo & Juliet. One small construction base, four interiors. Each cabin is for two adults only, 18+. Essential amenities, affordable construction and distinctive themed design.",
+    "title": "Four themed cabins",
+    "subtitle": "Three romantic Comfort cabins for two adults and the two-level family Boyko Sycamore.",
     "from": "from",
     "area": "Area",
     "guests": "2 adults · 18+",
@@ -158,7 +159,7 @@ const en = {
   },
   "masterplan": {
     "title": "Placement on the plot",
-    "subtitle": "Adam & Eve, Picasso, Max Royal and Romeo & Juliet. One small construction base, four interiors. Each cabin is for two adults only, 18+.",
+    "subtitle": "Adam & Eve, Picasso, Boyko Sycamore and Romeo & Juliet. Three cabins for two adults and one family format.",
     "note": "The scheme is conceptual; final placement follows the survey and geology."
   },
   "form": {

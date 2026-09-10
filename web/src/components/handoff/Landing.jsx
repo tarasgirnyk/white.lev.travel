@@ -72,8 +72,8 @@ function Values() {
 
 }
 
-const exteriors = ['green-love-adam-eve-exterior.webp', 'green-love-picasso-exterior.webp', 'comfort-exterior.webp', 'green-love-romeo-juliet-exterior.webp'];
-const TIERS = dict.series.houses.map((h, i) => ({ image: P(exteriors[i]), tier: 'Comfort', size: dict.houses.guests, title: h.name, description: h.tagline, amenities: [dict.houses.terrace] }));
+const covers = ['green-love-adam-eve-exterior.webp', 'green-love-picasso-exterior.webp', 'green-love-yavir-boykivskyi-ground-floor.webp', 'green-love-romeo-juliet-exterior.webp'];
+const TIERS = dict.series.houses.map((h, i) => ({ image: P(covers[i]), tier: 'Comfort', size: h.guests || dict.houses.guests, title: h.name, description: h.tagline, amenities: [dict.houses.terrace] }));
 
 function Tiers() {
   return (
@@ -98,7 +98,13 @@ const GREEN_LOVE = [
     { src: P('green-love-adam-eve-06-terrace.webp'), alt: 'Приватна тераса' },
   ] },
 { slot: 'green-love-picasso', no: '02', name: 'Пікассо', tagline: 'Мистецтво · музика · львівські спогади', size: 'Уточнюється', amenities: ['Тераса', 'Барбекю', 'Панорамне скління'], image: P('green-love-picasso.webp'), exterior: P('green-love-picasso-exterior.webp') },
-{ slot: 'green-love-max-royal', no: '03', name: 'Max Royal', tagline: 'Темне дерево · фактурний камінь · світлий текстиль · приглушена зелень', size: 'Уточнюється', amenities: ['Тераса', 'Барбекю', 'Панорамне скління'], image: P('green-love-max-royal.webp'), exterior: P('comfort-exterior.webp') },
+{ slot: 'green-love-yavir-boykivskyi', no: '03', name: 'Явір бойківський', tagline: 'Вапняна штукатурка · копчений дуб · сучасна бойківська геометрія', size: 'Уточнюється', guests: 'Сімейний формат', amenities: ['Спальня нагорі', 'Диван для дітей', 'Тераса'],
+  photos: [
+    { src: P('green-love-yavir-boykivskyi-ground-floor.webp'), alt: 'Студія першого поверху' },
+    { src: P('green-love-yavir-boykivskyi-bedroom.webp'), alt: 'Спальня під двосхилим дахом' },
+    { src: P('green-love-yavir-boykivskyi-bathroom.webp'), alt: 'Санвузол' },
+    { src: P('green-love-yavir-boykivskyi-plan.webp'), alt: 'План двох поверхів і фасад' },
+  ] },
 { slot: 'green-love-romeo-juliet', no: '04', name: 'Ромео і Джульєтта', tagline: "Теплий камінь · аркові мотиви · легкий балдахін · бордовий оксамит", size: 'Уточнюється', amenities: ['Тераса', 'Барбекю', 'Панорамне скління'], image: P('green-love-romeo-juliet.webp'), exterior: P('green-love-romeo-juliet-exterior.webp') }];
 
 function ScrollGallery({ slides }) {
@@ -149,7 +155,7 @@ function GreenLoveSeries() {
           const slides = h.photos
             ? [
                 { node: <img key="main" src={h.photos[0].src} alt={`${h.name} · ${h.photos[0].alt}`} style={imgStyle} />, thumb: h.photos[0].src },
-                { node: <img key="ext" src={h.exterior} alt={`${h.name} · екстер'єр`} style={imgStyle} />, thumb: h.exterior },
+                ...(h.exterior ? [{ node: <img key="ext" src={h.exterior} alt={`${h.name} · екстер'єр`} style={imgStyle} />, thumb: h.exterior }] : []),
                 ...h.photos.slice(1).map((p, j) => ({ node: <img key={j} src={p.src} alt={`${h.name} · ${p.alt}`} style={imgStyle} />, thumb: p.src })),
               ]
             : [
@@ -167,7 +173,7 @@ function GreenLoveSeries() {
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-h4)', color: 'var(--color-text)', margin: 0, letterSpacing: 'var(--tracking-tight)' }}>{h.name}</h3>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-body-sm)', color: 'var(--color-text-muted)', lineHeight: 'var(--leading-body)', margin: 0 }}>{h.tagline}</p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,minmax(0,1fr))', gap: '10px 16px', margin: '6px 0 0' }}>
-                  {[{ Icon: IconArea, label: dict.houses.area + ': ' + h.size }, { Icon: IconGuests, label: dict.houses.guests }, { Icon: IconJacuzzi, label: locale === 'uk' ? 'Купіль' : locale === 'pl' ? 'Balia' : 'Hot tub' }, { Icon: IconHeart, label: dict.houses.terrace }].map((f, j) =>
+                  {[{ Icon: IconArea, label: dict.houses.area + ': ' + h.size }, { Icon: IconGuests, label: h.guests || dict.houses.guests }, { Icon: IconJacuzzi, label: locale === 'uk' ? 'Купіль' : locale === 'pl' ? 'Balia' : 'Hot tub' }, { Icon: IconHeart, label: dict.houses.terrace }].map((f, j) =>
                   <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <f.Icon style={{ width: 18, height: 18, flexShrink: 0, color: 'var(--color-accent)' }} />
                     <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text)' }}>{f.label}</span>

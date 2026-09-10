@@ -6,7 +6,7 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
-      NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-https://white.lev.travel}
+      NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-https://ordo.lev.plus}
       SEED_ON_INIT: ${SEED_ON_INIT:-true}
       ADMIN_EMAIL: ${ADMIN_EMAIL:-gor@miotex.com}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD}

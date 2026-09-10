@@ -38,4 +38,4 @@ echo "  /admin -> HTTP ${code:-?}"
 
 echo "==> статус"
 docker compose ps
-echo "Готово. Сайт: https://${SITE_ADDRESS:-white.lev.travel}  ·  Адмінка: /admin"
+echo "Готово. Сайт: https://${SITE_ADDRESS:-ordo.lev.plus}  ·  Адмінка: /admin"

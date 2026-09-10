@@ -17,6 +17,12 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+const allowedOrigins = Array.from(new Set([
+  serverURL,
+  'https://ordo.lev.plus',
+  'https://white.lev.travel',
+  'http://localhost:3000',
+]))
 
 export default buildConfig({
   serverURL,
@@ -47,8 +53,8 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  cors: [serverURL],
-  csrf: [serverURL],
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
   sharp,
   onInit: async (payload) => {
     if (process.env.SEED_ON_INIT === 'true') {

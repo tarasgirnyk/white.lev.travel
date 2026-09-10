@@ -261,30 +261,30 @@ export const houses: HouseSeed[] = [
     ]
   },
   {
-    "slug": "max-royal",
+    "slug": "yavir-boykivskyi",
     "segment": "comfort",
     "order": 3,
     "title": {
-      "uk": "Max Royal",
-      "en": "Max Royal",
-      "pl": "Max Royal"
+      "uk": "Явір бойківський",
+      "en": "Boyko Sycamore",
+      "pl": "Jawor bojkowski"
     },
     "tagline": {
-      "uk": "Темне дерево · фактурний камінь · світлий текстиль · приглушена зелень",
-      "en": "Dark wood · textured stone · light textiles · muted green",
-      "pl": "Ciemne drewno · fakturowy kamień · jasne tkaniny · stłumiona zieleń"
+      "uk": "Вапняна штукатурка · копчений дуб · сучасна бойківська геометрія",
+      "en": "Lime plaster · smoked oak · contemporary Boyko geometry",
+      "pl": "Tynk wapienny · przydymiony dąb · współczesna geometria bojkowska"
     },
     "summary": {
-      "uk": "Тільки 2 дорослих, 18+. Без дітей і додаткових місць. Необхідне оснащення, доступне виконання й виразний тематичний дизайн.",
-      "en": "Two adults only, 18+. No children or extra beds. Essential amenities, affordable construction and distinctive themed design.",
-      "pl": "Tylko dwoje dorosłych, 18+. Bez dzieci i dodatkowych miejsc. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny."
+      "uk": "Дворівневий сімейний будинок: спальня батьків нагорі, студія з диваном для дітей унизу, компактна кухня, душ/WC і приватна тераса.",
+      "en": "A two-level family cabin: parents’ bedroom upstairs, a studio with a sofa for children downstairs, a kitchenette, shower/WC and private terrace.",
+      "pl": "Dwupoziomowy dom rodzinny: sypialnia rodziców na piętrze, studio z sofą dla dzieci na dole, aneks kuchenny, prysznic/WC i prywatny taras."
     },
     "areaFrom": null,
     "areaTo": null,
     "terraceArea": null,
-    "bedrooms": 0,
+    "bedrooms": 1,
     "bathrooms": 1,
-    "guests": 2,
+    "guests": null,
     "buildCostUsd": null,
     "assetPriceUsd": null,
     "netIncomeYearUsd": null,
@@ -294,27 +294,27 @@ export const houses: HouseSeed[] = [
     "nightlyMaxUsd": null,
     "features": {
       "uk": [
-        "Тільки 2 дорослих, 18+. Без дітей і додаткових місць.",
-        "Одне двоспальне ліжко",
-        "Два крісла й столик для двох",
+        "Сімейний формат; точна місткість уточнюється",
+        "Спальня батьків на другому поверсі",
+        "Розкладний диван для дітей у студії",
         "Компактна кухня",
         "Окремий душ і WC",
         "Купіль і два лежаки на терасі",
         "Тепло, вентиляція, гаряча вода, Wi-Fi"
       ],
       "en": [
-        "Two adults only, 18+. No children or extra beds.",
-        "One double bed",
-        "Two chairs and a table for two",
+        "Family format; exact capacity to be confirmed",
+        "Parents’ bedroom on the second floor",
+        "Convertible sofa for children in the studio",
         "Compact kitchenette",
         "Separate shower and WC",
         "Outdoor hot tub and two loungers",
         "Heating, ventilation, hot water and Wi-Fi"
       ],
       "pl": [
-        "Tylko dwoje dorosłych, 18+. Bez dzieci i dodatkowych miejsc.",
-        "Jedno podwójne łóżko",
-        "Dwa fotele i stolik dla dwojga",
+        "Format rodzinny; dokładna liczba gości do ustalenia",
+        "Sypialnia rodziców na drugim poziomie",
+        "Rozkładana sofa dla dzieci w studiu",
         "Mały aneks kuchenny",
         "Osobny prysznic i WC",
         "Balia i dwa leżaki na tarasie",
@@ -324,15 +324,28 @@ export const houses: HouseSeed[] = [
     "rooms": [
       {
         "name": {
-          "uk": "Житлова студія",
-          "en": "Living studio",
-          "pl": "Studio mieszkalne"
+          "uk": "Студія першого поверху",
+          "en": "Ground-floor studio",
+          "pl": "Studio na parterze"
         },
         "area": "",
         "note": {
-          "uk": "Одне двоспальне ліжко",
-          "en": "One double bed",
-          "pl": "Jedno podwójne łóżko"
+          "uk": "Диван для дітей і стіл на чотирьох",
+          "en": "Sofa for children and a table for four",
+          "pl": "Sofa dla dzieci i stół dla czterech osób"
+        }
+      },
+      {
+        "name": {
+          "uk": "Спальня батьків",
+          "en": "Parents’ bedroom",
+          "pl": "Sypialnia rodziców"
+        },
+        "area": "",
+        "note": {
+          "uk": "Другий поверх під двосхилим дахом",
+          "en": "Second floor under the pitched roof",
+          "pl": "Drugi poziom pod dwuspadowym dachem"
         }
       },
       {

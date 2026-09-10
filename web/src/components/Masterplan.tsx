@@ -25,7 +25,7 @@ const spots: Spot[] = [
   {
     "id": "3",
     "label": "3",
-    "slug": "max-royal",
+    "slug": "yavir-boykivskyi",
     "x": 60,
     "y": 46
   },
@@ -97,7 +97,7 @@ export function Masterplan({ locale, dict }: { locale: Locale; dict: Dict }) {
       <div className="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <p className="text-xs text-muted max-w-md">{dict.masterplan.note}</p>
         <div className="flex gap-4 text-xs text-fg-dim">
-          <span>4×Comfort · 2 × 18+</span>
+          <span>4 тематичні будинки</span>
         </div>
       </div>
     </div>

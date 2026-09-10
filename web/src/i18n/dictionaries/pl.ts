@@ -15,7 +15,7 @@ const pl = {
   "hero": {
     "kicker": "White.Lev.Travel · Bojkowszczyzna",
     "title": "Prywatny wypoczynek wśród zielonych gór",
-    "subtitle": "Adam i Ewa, Picasso, Max Royal oraz Romeo i Julia. Jedna mała podstawa budowlana, cztery wnętrza. Każdy dom tylko dla dwojga dorosłych, 18+. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny.",
+    "subtitle": "Adam i Ewa, Picasso, Jawor bojkowski oraz Romeo i Julia. Trzy romantyczne domy Comfort dla dwojga dorosłych i jeden osobny, dwupoziomowy dom rodzinny.",
     "ctaInvest": "Wybierz dom",
     "ctaBook": "O lokalizacji",
     "scroll": "Przewiń w dół"
@@ -26,12 +26,12 @@ const pl = {
     "privacyTitle": "Prywatność",
     "privacyText": "Okna, tarasy i balie są tak ustawione, by goście różnych domów nie widzieli się nawzajem.",
     "comfortTitle": "Komfort",
-    "comfortText": "Tylko dwoje dorosłych, 18+. Bez dzieci i dodatkowych miejsc. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny."
+    "comfortText": "Trzy domy Comfort są dla dwojga dorosłych, 18+. Jawor bojkowski ma sypialnię na piętrze i sofę dla dzieci na dole."
   },
   "series": {
     "eyebrow": "Green Love Travel · wnętrze",
-    "title": "Cztery tematyczne domy Comfort dla dwojga",
-    "subtitle": "Adam i Ewa, Picasso, Max Royal oraz Romeo i Julia. Jedna mała podstawa budowlana, cztery wnętrza. Każdy dom tylko dla dwojga dorosłych, 18+. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny.",
+    "title": "Cztery domy tematyczne",
+    "subtitle": "Trzy romantyczne domy Comfort dla dwojga dorosłych. Jawor bojkowski to dwupoziomowy format rodzinny z sypialnią na piętrze, studiem i sofą dla dzieci na dole.",
     "perNight": "",
     "book": "Rezerwuj",
     "exterior": "zewnątrz",
@@ -54,9 +54,10 @@ const pl = {
       },
       {
         "no": "03",
-        "img": "green-love-max-royal",
-        "name": "Max Royal",
-        "tagline": "Ciemne drewno · fakturowy kamień · jasne tkaniny · stłumiona zieleń",
+        "img": "green-love-yavir-boykivskyi-ground-floor",
+        "name": "Jawor bojkowski",
+        "tagline": "Tynk wapienny · przydymiony dąb · współczesna geometria bojkowska",
+        "guests": "Format rodzinny",
         "price": "Stawka do ustalenia"
       },
       {
@@ -84,11 +85,11 @@ const pl = {
     "items": [
       {
         "q": "Ilu gości mieści dom?",
-        "a": "Tylko dwoje dorosłych, 18+. Bez dzieci i dodatkowych miejsc."
+        "a": "Adam i Ewa, Picasso oraz Romeo i Julia są dla dwojga dorosłych, 18+. Rodzinna pojemność Jaworu bojkowskiego jest jeszcze ustalana."
       },
       {
         "q": "Czy można z dziećmi?",
-        "a": "Wszystkie cztery domy Comfort są tylko dla dwojga pełnoletnich gości, 18+. Nie przyjmujemy dzieci ani dodatkowych gości."
+        "a": "Jawor bojkowski jest przeznaczony dla rodzin: sypialnia rodziców znajduje się na piętrze, a na dole jest rozkładana sofa dla dzieci. Liczba miejsc dla dzieci jest jeszcze ustalana."
       },
       {
         "q": "Czy goście różnych domów się widzą?",
@@ -96,7 +97,7 @@ const pl = {
       },
       {
         "q": "Co obejmuje pobyt?",
-        "a": "Jedno podwójne łóżko. Mały aneks kuchenny. Osobny prysznic i WC. Prywatny taras. Balia i dwa leżaki na tarasie."
+        "a": "Każdy dom ma aneks kuchenny, osobny prysznic/WC i prywatny taras z balią. W Jaworze bojkowskim sypialnia jest na piętrze, a w studiu znajduje się sofa dla dzieci."
       }
     ]
   },
@@ -106,12 +107,12 @@ const pl = {
     "investText": "Gotowy aktyw dochodowy pod klucz: widokowa ziemia + dom + balia/taras + gotowy strumień najmu ze zdjętą obsługą operacyjną. Dwa źródła dochodu: najem teraz i wzrost wartości później.",
     "investCta": "Pakiet inwestora",
     "stayTitle": "Dla gościa",
-    "stayText": "Adam i Ewa, Picasso, Max Royal oraz Romeo i Julia. Jedna mała podstawa budowlana, cztery wnętrza. Każdy dom tylko dla dwojga dorosłych, 18+. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny.",
+    "stayText": "Adam i Ewa, Picasso oraz Romeo i Julia są dla dwojga dorosłych. Jawor bojkowski to osobny dwupoziomowy format rodzinny.",
     "stayCta": "Zarezerwuj pobyt"
   },
   "houses": {
-    "title": "Cztery tematyczne domy Comfort dla dwojga",
-    "subtitle": "Adam i Ewa, Picasso, Max Royal oraz Romeo i Julia. Jedna mała podstawa budowlana, cztery wnętrza. Każdy dom tylko dla dwojga dorosłych, 18+. Niezbędne wyposażenie, przystępny koszt budowy i wyrazisty wystrój tematyczny.",
+    "title": "Cztery domy tematyczne",
+    "subtitle": "Trzy romantyczne domy Comfort dla dwojga dorosłych oraz dwupoziomowy rodzinny Jawor bojkowski.",
     "from": "od",
     "area": "Powierzchnia",
     "guests": "2 dorosłych · 18+",
@@ -158,7 +159,7 @@ const pl = {
   },
   "masterplan": {
     "title": "Rozmieszczenie na działce",
-    "subtitle": "Adam i Ewa, Picasso, Max Royal oraz Romeo i Julia. Jedna mała podstawa budowlana, cztery wnętrza. Każdy dom tylko dla dwojga dorosłych, 18+.",
+    "subtitle": "Adam i Ewa, Picasso, Jawor bojkowski oraz Romeo i Julia. Trzy domy dla dwojga dorosłych i jeden format rodzinny.",
     "note": "Schemat koncepcyjny; ostateczne posadowienie wg pomiarów i geologii."
   },
   "form": {

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Locale } from '@/i18n/config'
 import type { Dict } from '@/i18n'
 
-const themeSlugs = ['adam-eve', 'picasso', 'max-royal', 'romeo-juliet']
+const themeSlugs = ['adam-eve', 'picasso', 'yavir-boykivskyi', 'romeo-juliet']
 
 export function GreenLoveSeries({ locale, dict }: { locale: Locale; dict: Dict }) {
   const s = dict.series
